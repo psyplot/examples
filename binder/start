@@ -1,0 +1,9 @@
+# always install the latest version from github
+
+PACKAGES=""
+
+for PKG in psyplot psy-simple psy-maps psy-reg psyplot-gui psy-view; do
+    PACKAGES="${PACKAGES} git+https://github.com/psyplot/${PKG}.git"
+done
+
+pip install $PACKAGES
