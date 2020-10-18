@@ -45,8 +45,37 @@ jobs:
           path: ~/repo/_build
           destination: docs
 
+  deploy_docs:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - attach_workspace:
+          at: _build
+      - run:
+          name: Disable jekyll builds
+          command: touch _build/.nojekyll
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g gh-pages
+            git config user.email "ci-build@psyplot.org"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "59:ad:fd:64:71:eb:81:01:6a:d7:1a:c9:0c:19:39:af"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "CircleCi Build ${CIRCLE_BUILD_NUM}, commit ${CIRCLE_SHA1} [skip ci]" --dist _build
+
 workflows:
   version: 2.1
   build_docs:
     jobs:
       - build_docs
+      - deploy_docs:
+          requires:
+            - build_docs
+          filters:
+            branches:
+              only: master
