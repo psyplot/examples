@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  gh-pages: sugarshin/gh-pages@0.0.6
-
 commands:
   install_conda:
     description: "Install miniconda"
@@ -48,20 +45,40 @@ jobs:
       - install_conda
       - build_docs
       - store_artifacts:
-          path: ~/repo/_build/html
+          path: ~/repo/_build
           destination: docs
 
+  deploy_docs:
+    docker:
+      - image: node:latest
+    steps:
+      - checkout
+      - attach_workspace:
+          at: _build
+      - run:
+          name: Disable jekyll builds
+          command: touch _build/html/.nojekyll
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g gh-pages@3.0.0
+            git config user.email "ci-build@psyplot.org"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "5c:77:3f:6a:68:f3:89:64:f1:ae:a2:31:2f:96:be:bf"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "CircleCi Build ${CIRCLE_BUILD_NUM}, commit ${CIRCLE_SHA1} [skip ci]" --dist _build/html
 
 workflows:
   version: 2.1
   build_docs:
     jobs:
       - build_docs
-      - gh-pages/deploy:
+      - deploy_docs:
           requires:
             - build_docs
           filters:
             branches:
               only: main
-          build-dir: _build/html
-          ssh-fingerprints: "5c:77:3f:6a:68:f3:89:64:f1:ae:a2:31:2f:96:be:bf"
