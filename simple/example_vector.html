@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Vector plot &mdash; psyplot-examples version 6adc493</title>
+  <title>Vector plot &mdash; psyplot-examples version db41de4</title>
   
 
   
@@ -98,7 +98,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/example_sharing.html">Sharing formatoptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html">Applying your own post processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html#Saving-and-loading">Saving and loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../general/example_cdo.html">Usage of Climate Data Operators</a></li>
 </ul>
 
             
@@ -421,10 +420,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/6adc493/simple/example_vector.ipynb">simple/example_vector.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/simple/example_vector.ipynb">simple/example_vector.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/6adc493?filepath=simple/example_vector.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=simple/example_vector.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -450,11 +449,11 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import psyplot.project as psy
-import xarray as xr
-%matplotlib inline
-%config InlineBackend.close_figures = False
-import numpy as np
+<span></span><span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -472,14 +471,14 @@ import numpy as np
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>x2 = np.arange(0, 2 * np.pi, .2)
-y2 = np.arange(0, 2 * np.pi, .2)
-x22d, y22d = np.meshgrid(x2, y2)
-ds2 = xr.Dataset(
-    {&#39;u&#39;: xr.Variable((&#39;x&#39;, &#39;y&#39;), np.cos(x22d)),
-     &#39;v&#39;: xr.Variable((&#39;x&#39;, &#39;y&#39;), np.sin(y22d))},
-    {&#39;x&#39;: xr.Variable((&#39;x&#39;, ), x2),
-     &#39;y&#39;: xr.Variable((&#39;y&#39;, ), y2)})
+<span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x22d</span><span class="p">,</span> <span class="n">y22d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<span class="n">ds2</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span>
+    <span class="p">{</span><span class="s1">&#39;u&#39;</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x22d</span><span class="p">)),</span>
+     <span class="s1">&#39;v&#39;</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">y22d</span><span class="p">))},</span>
+    <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="p">),</span> <span class="n">x2</span><span class="p">),</span>
+     <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="p">),</span> <span class="n">y2</span><span class="p">)})</span>
 </pre></div>
 </div>
 </div>
@@ -489,7 +488,7 @@ ds2 = xr.Dataset(
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>p = psy.plot.vector(ds2, name=[[&#39;u&#39;, &#39;v&#39;]], arrowsize=20.0)
+<span></span><span class="n">p</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">ds2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]],</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mf">20.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -506,8 +505,8 @@ ds2 = xr.Dataset(
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>p.update(cmap=&#39;Reds&#39;, color=&#39;absolute&#39;)
-p.show()
+<span></span><span class="n">p</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;absolute&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -524,8 +523,8 @@ p.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>p.update(plot=&#39;stream&#39;, arrowsize=1.0)
-p.show()
+<span></span><span class="n">p</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="s1">&#39;stream&#39;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -542,7 +541,7 @@ p.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>p.summaries(&#39;vector&#39;)
+<span></span><span class="n">p</span><span class="o">.</span><span class="n">summaries</span><span class="p">(</span><span class="s1">&#39;vector&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -564,7 +563,7 @@ density
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic data visualization on a map &mdash; psyplot-examples version 6adc493</title>
+  <title>Basic data visualization on a map &mdash; psyplot-examples version db41de4</title>
   
 
   
@@ -104,7 +104,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/example_sharing.html">Sharing formatoptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html">Applying your own post processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html#Saving-and-loading">Saving and loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../general/example_cdo.html">Usage of Climate Data Operators</a></li>
 </ul>
 
             
@@ -427,10 +426,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/6adc493/maps/example_mapplotters.ipynb">maps/example_mapplotters.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/maps/example_mapplotters.ipynb">maps/example_mapplotters.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/6adc493?filepath=maps/example_mapplotters.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=maps/example_mapplotters.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -456,12 +455,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import psyplot.project as psy
-%matplotlib inline
-%config InlineBackend.close_figures = False
-# we show the figures after they are drawn or updated. This is useful for the
-# visualization in the ipython notebook
-psy.rcParams[&#39;auto_show&#39;] = True
+<span></span><span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
+<span class="c1"># we show the figures after they are drawn or updated. This is useful for the</span>
+<span class="c1"># visualization in the ipython notebook</span>
+<span class="n">psy</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;auto_show&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
@@ -473,7 +472,7 @@ psy.rcParams[&#39;auto_show&#39;] = True
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps = psy.plot.mapplot(&#39;demo.nc&#39;, name=&#39;t2m&#39;)
+<span></span><span class="n">maps</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapplot</span><span class="p">(</span><span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t2m&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -490,7 +489,7 @@ psy.rcParams[&#39;auto_show&#39;] = True
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps.update(clabel=&#39;{desc}&#39;, cmap=&#39;RdBu_r&#39;)
+<span></span><span class="n">maps</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">clabel</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{desc}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -513,7 +512,7 @@ psy.rcParams[&#39;auto_show&#39;] = True
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps.update(projection=&#39;ortho&#39;)
+<span></span><span class="n">maps</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;ortho&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -530,7 +529,7 @@ psy.rcParams[&#39;auto_show&#39;] = True
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps.update(lonlatbox=&#39;Europe&#39;, xgrid=False, ygrid=False)
+<span></span><span class="n">maps</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">lonlatbox</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="n">xgrid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ygrid</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -547,7 +546,7 @@ psy.rcParams[&#39;auto_show&#39;] = True
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.plot.mapplot.keys(grouped=True)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapplot</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="n">grouped</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -629,7 +628,7 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)  # we close the project because we create other figures below
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>  <span class="c1"># we close the project because we create other figures below</span>
 </pre></div>
 </div>
 </div>
@@ -642,8 +641,8 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>mapvectors = psy.plot.mapvector(&#39;demo.nc&#39;, name=[[&#39;u&#39;, &#39;v&#39;]], lonlatbox=&#39;Europe&#39;,
-                                arrowsize=100)
+<span></span><span class="n">mapvectors</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapvector</span><span class="p">(</span><span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]],</span> <span class="n">lonlatbox</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span>
+                                <span class="n">arrowsize</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -660,7 +659,7 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>mapvectors.update(plot=&#39;stream&#39;, arrowsize=None)
+<span></span><span class="n">mapvectors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="s1">&#39;stream&#39;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -677,7 +676,7 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>mapvectors.update(color=&#39;absolute&#39;)
+<span></span><span class="n">mapvectors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;absolute&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -694,7 +693,7 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>mapvectors.update(color=&#39;k&#39;, linewidth=[&#39;absolute&#39;, 0.5])
+<span></span><span class="n">mapvectors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;absolute&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -711,7 +710,7 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -727,8 +726,8 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps = psy.plot.mapcombined(&#39;demo.nc&#39;, name=[[&#39;t2m&#39;, [&#39;u&#39;, &#39;v&#39;]]], lonlatbox=&#39;Europe&#39;,
-                            arrowsize=100)
+<span></span><span class="n">maps</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapcombined</span><span class="p">(</span><span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;t2m&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]]],</span> <span class="n">lonlatbox</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span>
+                            <span class="n">arrowsize</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -745,7 +744,7 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.plot.mapcombined.keys(&#39;colors&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapcombined</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="s1">&#39;colors&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -773,8 +772,8 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps.update(color=&#39;absolute&#39;, cmap=&#39;viridis&#39;, vcmap=&#39;RdBu_r&#39;, vcbar=&#39;r&#39;,
-            clabel=&#39;{desc}&#39;, vclabel=&#39;Wind Speed [%(units)s]&#39;)
+<span></span><span class="n">maps</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;absolute&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">vcmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">vcbar</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
+            <span class="n">clabel</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{desc}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">vclabel</span><span class="o">=</span><span class="s1">&#39;Wind Speed [</span><span class="si">%(units)s</span><span class="s1">]&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -799,30 +798,30 @@ Axes formatoptions
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span># create the subplots
-axes = psy.multiple_subplots(2, 2, n=4, for_maps=True)
-# disable the automatic showing of the figures
-psy.rcParams[&#39;auto_show&#39;] = False
-# create plots for the scalar fields
-maps = psy.plot.mapplot(&#39;demo.nc&#39;, name=&#39;t2m&#39;, clabel=&#39;{desc}&#39;, ax=axes[0],
-                        title=&#39;scalar field&#39;)
-# create plots for scalar and vector fields
-combined = psy.plot.mapcombined(
-    &#39;demo.nc&#39;, name=[[&#39;t2m&#39;, [&#39;u&#39;, &#39;v&#39;]]], clabel=&#39;{desc}&#39;, arrowsize=100,
-    cmap=&#39;RdBu_r&#39;, ax=axes[1], title=&#39;scalar and vector field&#39;)
-# create two plots for vector field
-mapvectors = psy.plot.mapvector(&#39;demo.nc&#39;, name=[[&#39;u&#39;, &#39;v&#39;], [&#39;u&#39;, &#39;v&#39;]],
-                                ax=axes[2:])
-# where one of them shall be a stream plot
-mapvectors[0].psy.update(arrowsize=100, title=&#39;quiver plot&#39;)
-mapvectors[1].psy.update(plot=&#39;stream&#39;, title=&#39;stream plot&#39;)
-# now update all to a robin projection
-p = psy.gcp(True)
-with p.no_auto_update:
-    p.update(projection=&#39;robin&#39;, titlesize=&#39;x-large&#39;)
-    # and the one with the wind fields to focus on Europe
-    p[1:].update(lonlatbox=&#39;Europe&#39;)
-    p.start_update()
+<span></span><span class="c1"># create the subplots</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">multiple_subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">for_maps</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># disable the automatic showing of the figures</span>
+<span class="n">psy</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;auto_show&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="c1"># create plots for the scalar fields</span>
+<span class="n">maps</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapplot</span><span class="p">(</span><span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t2m&#39;</span><span class="p">,</span> <span class="n">clabel</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{desc}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;scalar field&#39;</span><span class="p">)</span>
+<span class="c1"># create plots for scalar and vector fields</span>
+<span class="n">combined</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapcombined</span><span class="p">(</span>
+    <span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;t2m&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]]],</span> <span class="n">clabel</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{desc}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;scalar and vector field&#39;</span><span class="p">)</span>
+<span class="c1"># create two plots for vector field</span>
+<span class="n">mapvectors</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapvector</span><span class="p">(</span><span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]],</span>
+                                <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+<span class="c1"># where one of them shall be a stream plot</span>
+<span class="n">mapvectors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arrowsize</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;quiver plot&#39;</span><span class="p">)</span>
+<span class="n">mapvectors</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="s1">&#39;stream&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;stream plot&#39;</span><span class="p">)</span>
+<span class="c1"># now update all to a robin projection</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">gcp</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">p</span><span class="o">.</span><span class="n">no_auto_update</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span> <span class="n">titlesize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+    <span class="c1"># and the one with the wind fields to focus on Europe</span>
+    <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">lonlatbox</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">start_update</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -838,7 +837,7 @@ with p.no_auto_update:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

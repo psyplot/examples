@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bar plot demo &mdash; psyplot-examples version 6adc493</title>
+  <title>Bar plot demo &mdash; psyplot-examples version db41de4</title>
   
 
   
@@ -98,7 +98,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/example_sharing.html">Sharing formatoptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html">Applying your own post processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html#Saving-and-loading">Saving and loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../general/example_cdo.html">Usage of Climate Data Operators</a></li>
 </ul>
 
             
@@ -421,10 +420,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/6adc493/simple/example_bar.ipynb">simple/example_bar.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/simple/example_bar.ipynb">simple/example_bar.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/6adc493?filepath=simple/example_bar.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=simple/example_bar.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -449,9 +448,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import psyplot.project as psy
-%matplotlib inline
-%config InlineBackend.close_figures = False
+<span></span><span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
 </pre></div>
 </div>
 </div>
@@ -468,21 +467,21 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>axes = iter(psy.multiple_subplots(2, 2, n=3))
-for var in [&#39;t2m&#39;, &#39;u&#39;, &#39;v&#39;]:
-    psy.plot.barplot(
-        &#39;demo.nc&#39;,  # netCDF file storing the data
-        name=var, # one plot for each variable
-        y=[0, 1],  # two bars in total
-        z=0, x=0,      # choose latitude and longitude as dimensions
-        ylabel=&quot;{desc}&quot;,  # use the longname and units on the y-axis
-        ax=next(axes),
-        color=&#39;coolwarm&#39;, xticklabels=&#39;%B %Y&#39;,
-        legendlabels=&#39;latitude %(y)1.2f $^\circ$N&#39;, legend=&#39;upper left&#39;,
-        title=&#39;equally spaced&#39;
-    )
-bars = psy.gcp(True)
-bars.show()
+<span></span><span class="n">axes</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">psy</span><span class="o">.</span><span class="n">multiple_subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;t2m&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]:</span>
+    <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
+        <span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span>  <span class="c1"># netCDF file storing the data</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">var</span><span class="p">,</span> <span class="c1"># one plot for each variable</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>  <span class="c1"># two bars in total</span>
+        <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>      <span class="c1"># choose latitude and longitude as dimensions</span>
+        <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{desc}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1"># use the longname and units on the y-axis</span>
+        <span class="n">ax</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">axes</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="s1">&#39;%B %Y&#39;</span><span class="p">,</span>
+        <span class="n">legendlabels</span><span class="o">=</span><span class="s1">&#39;latitude </span><span class="si">%(y)1.2f</span><span class="s1"> $^\circ$N&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;equally spaced&#39;</span>
+    <span class="p">)</span>
+<span class="n">bars</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">gcp</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">bars</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -499,8 +498,8 @@ bars.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>bars(name=&#39;u&#39;).update(widths=&#39;data&#39;, xticks=&#39;month&#39;, title=&#39;data spaced&#39;)
-bars.show()
+<span></span><span class="n">bars</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;u&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">widths</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;data spaced&#39;</span><span class="p">)</span>
+<span class="n">bars</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -517,8 +516,8 @@ bars.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>bars(name=&#39;v&#39;).update(plot=&#39;stacked&#39;, title=&#39;stacked&#39;)
-bars.show()
+<span></span><span class="n">bars</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="s1">&#39;stacked&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;stacked&#39;</span><span class="p">)</span>
+<span class="n">bars</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -534,7 +533,7 @@ bars.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

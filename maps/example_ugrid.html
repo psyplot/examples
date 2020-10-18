@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Visualizing unstructured data &mdash; psyplot-examples version 6adc493</title>
+  <title>Visualizing unstructured data &mdash; psyplot-examples version db41de4</title>
   
 
   
@@ -109,7 +109,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/example_sharing.html">Sharing formatoptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html">Applying your own post processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html#Saving-and-loading">Saving and loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../general/example_cdo.html">Usage of Climate Data Operators</a></li>
 </ul>
 
             
@@ -432,10 +431,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/6adc493/maps/example_ugrid.ipynb">maps/example_ugrid.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/maps/example_ugrid.ipynb">maps/example_ugrid.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/6adc493?filepath=maps/example_ugrid.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=maps/example_ugrid.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -466,10 +465,10 @@ below for a detailed explanation).</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import psyplot.project as psy
-import matplotlib as mpl
-%matplotlib inline
-%config InlineBackend.close_figures = False
+<span></span><span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
 </pre></div>
 </div>
 </div>
@@ -478,9 +477,9 @@ import matplotlib as mpl
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.rcParams[&#39;plotter.maps.xgrid&#39;] = False
-psy.rcParams[&#39;plotter.maps.ygrid&#39;] = False
-mpl.rcParams[&#39;figure.figsize&#39;] = [10., 8.]
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;plotter.maps.xgrid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">psy</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;plotter.maps.ygrid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -493,10 +492,10 @@ mpl.rcParams[&#39;figure.figsize&#39;] = [10., 8.]
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>tsunami = psy.plot.mapplot(
-    &#39;ugrid_demo.nc&#39;, name=&#39;Mesh2_height&#39;, load=True,
-    maskleq=0, lonlatbox=&#39;Japan&#39;, cmap=&#39;Blues&#39;,
-    clabel=&#39;{desc}&#39;, stock_img=True, lsm=&#39;50m&#39;)
+<span></span><span class="n">tsunami</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapplot</span><span class="p">(</span>
+    <span class="s1">&#39;ugrid_demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Mesh2_height&#39;</span><span class="p">,</span> <span class="n">load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">maskleq</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lonlatbox</span><span class="o">=</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
+    <span class="n">clabel</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{desc}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">stock_img</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lsm</span><span class="o">=</span><span class="s1">&#39;50m&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -513,7 +512,7 @@ mpl.rcParams[&#39;figure.figsize&#39;] = [10., 8.]
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>tsunami.docs(&#39;datagrid&#39;)
+<span></span><span class="n">tsunami</span><span class="o">.</span><span class="n">docs</span><span class="p">(</span><span class="s1">&#39;datagrid&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -551,8 +550,8 @@ ygrid
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>tsunami.update(datagrid={&#39;c&#39;: &#39;k&#39;, &#39;lw&#39;: 0.1})
-tsunami.show()
+<span></span><span class="n">tsunami</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">datagrid</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">})</span>
+<span class="n">tsunami</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -568,7 +567,7 @@ tsunami.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>tsunami.close()
+<span></span><span class="n">tsunami</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -582,8 +581,8 @@ tsunami.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps = psy.plot.mapplot(&#39;icon_grid_demo.nc&#39;, name=&#39;t2m&#39;, projection=&#39;robin&#39;,
-                        cmap=&#39;RdBu_r&#39;)
+<span></span><span class="n">maps</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapplot</span><span class="p">(</span><span class="s1">&#39;icon_grid_demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t2m&#39;</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span>
+                        <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -600,8 +599,8 @@ tsunami.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps.update(lonlatbox=&#39;Europe&#39;, datagrid=dict(color=&#39;k&#39;, linewidth=0.2))
-maps.show()
+<span></span><span class="n">maps</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">lonlatbox</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="n">datagrid</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -618,11 +617,11 @@ maps.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>vectors = psy.plot.mapvector(
-    &#39;icon_grid_demo.nc&#39;, name=[[&#39;u&#39;, &#39;v&#39;]] * 2, projection=&#39;robin&#39;,
-    ax=(1, 2), lonlatbox=&#39;Europe&#39;)
-vectors.plotters[0].update(arrowsize=100)
-vectors.plotters[1].update(plot=&#39;stream&#39;)
+<span></span><span class="n">vectors</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapvector</span><span class="p">(</span>
+    <span class="s1">&#39;icon_grid_demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">lonlatbox</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
+<span class="n">vectors</span><span class="o">.</span><span class="n">plotters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">arrowsize</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">vectors</span><span class="o">.</span><span class="n">plotters</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="s1">&#39;stream&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -639,9 +638,9 @@ vectors.plotters[1].update(plot=&#39;stream&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>combined = psy.plot.mapcombined(
-    &#39;icon_grid_demo.nc&#39;, name=[[&#39;t2m&#39;, [&#39;u&#39;, &#39;v&#39;]]], projection=&#39;robin&#39;,
-    lonlatbox=&#39;Europe&#39;, arrowsize=100, cmap=&#39;RdBu_r&#39;, datagrid={&#39;c&#39;: &#39;k&#39;, &#39;lw&#39;: 0.1})
+<span></span><span class="n">combined</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapcombined</span><span class="p">(</span>
+    <span class="s1">&#39;icon_grid_demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;t2m&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]]],</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span>
+    <span class="n">lonlatbox</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">datagrid</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -658,8 +657,8 @@ vectors.plotters[1].update(plot=&#39;stream&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps = psy.plot.mapplot(&#39;icon_grid_demo.nc&#39;, name=&#39;t2m_edge&#39;, projection=&#39;robin&#39;,
-                        cmap=&#39;Wistia&#39;, datagrid=dict(c=&#39;b&#39;, lw=0.2))
+<span></span><span class="n">maps</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapplot</span><span class="p">(</span><span class="s1">&#39;icon_grid_demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t2m_edge&#39;</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span>
+                        <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Wistia&#39;</span><span class="p">,</span> <span class="n">datagrid</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -683,8 +682,8 @@ vectors.plotters[1].update(plot=&#39;stream&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>ds = tsunami[0].psy.base
-ds
+<span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">tsunami</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">base</span>
+<span class="n">ds</span>
 </pre></div>
 </div>
 </div>
@@ -730,11 +729,11 @@ Attributes:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>print(&#39;Mesh variable of Mesh2_height:&#39;, ds.Mesh2_height.mesh)
-print(&#39;Location of the variable in the grid cell:&#39;, ds.Mesh2_height.location)
-print(&#39;Name of the location variable:&#39;, ds.Mesh2.face_node_connectivity)
-print(&#39;--------------------------------------------&#39;)
-print(&#39;face node connectivity:&#39;, ds.Mesh2_face_nodes)
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mesh variable of Mesh2_height:&#39;</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Mesh2_height</span><span class="o">.</span><span class="n">mesh</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Location of the variable in the grid cell:&#39;</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Mesh2_height</span><span class="o">.</span><span class="n">location</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Name of the location variable:&#39;</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Mesh2</span><span class="o">.</span><span class="n">face_node_connectivity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;face node connectivity:&#39;</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Mesh2_face_nodes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -776,8 +775,8 @@ Attributes:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>ds = maps[0].psy.base
-ds
+<span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">base</span>
+<span class="n">ds</span>
 </pre></div>
 </div>
 </div>
@@ -823,8 +822,8 @@ Attributes:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>print(&#39;t2m:&#39;, ds.t2m.encoding[&#39;coordinates&#39;])
-print(&#39;t2m_edge:&#39;, ds.t2m_edge.encoding[&#39;coordinates&#39;])
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2m:&#39;</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">t2m</span><span class="o">.</span><span class="n">encoding</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2m_edge:&#39;</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">t2m_edge</span><span class="o">.</span><span class="n">encoding</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -843,8 +842,8 @@ t2m_edge: elat elon
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>print(ds.clat.bounds)
-ds[ds.clat.bounds]
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">clat</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">clat</span><span class="o">.</span><span class="n">bounds</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -883,8 +882,8 @@ Dimensions without coordinates: ncells, vertices
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>print(ds.elat.bounds)
-ds[ds.elat.bounds]
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">elat</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="n">ds</span><span class="o">.</span><span class="n">elat</span><span class="o">.</span><span class="n">bounds</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -929,7 +928,7 @@ Dimensions without coordinates: no
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>ds.t2m.CDI_grid_type
+<span></span><span class="n">ds</span><span class="o">.</span><span class="n">t2m</span><span class="o">.</span><span class="n">CDI_grid_type</span>
 </pre></div>
 </div>
 </div>
@@ -947,7 +946,7 @@ Dimensions without coordinates: no
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Plot a fit over a density plot &mdash; psyplot-examples version 6adc493</title>
+  <title>Plot a fit over a density plot &mdash; psyplot-examples version db41de4</title>
   
 
   
@@ -97,7 +97,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/example_sharing.html">Sharing formatoptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html">Applying your own post processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html#Saving-and-loading">Saving and loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../general/example_cdo.html">Usage of Climate Data Operators</a></li>
 </ul>
 
             
@@ -420,10 +419,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/6adc493/regression-analysis/example_densityreg.ipynb">regression-analysis/example_densityreg.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/regression-analysis/example_densityreg.ipynb">regression-analysis/example_densityreg.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/6adc493?filepath=regression-analysis/example_densityreg.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=regression-analysis/example_densityreg.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -448,11 +447,11 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import numpy as np
-import xarray as xr
-import psyplot.project as psy
-%matplotlib inline
-%config InlineBackend.close_figures = False
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
 </pre></div>
 </div>
 </div>
@@ -462,17 +461,17 @@ import psyplot.project as psy
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>all_x = []
-all_y = []
-for i in range(30):
-    deviation = np.abs(np.random.normal())
-    all_x.append(np.linspace(-np.pi - deviation, np.pi + deviation))
-    all_y.append(np.sin(all_x[-1]) + np.random.normal(scale=0.5, size=all_x[-1].size))
-x = np.concatenate(all_x)
-y = np.concatenate(all_y)
-ds = xr.Dataset({&#39;x&#39;: xr.Variable((&#39;experiment&#39;, ), x),
-                 &#39;y&#39;: xr.Variable((&#39;experiment&#39;, ), y)})
-ds
+<span></span><span class="n">all_x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">deviation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">())</span>
+    <span class="n">all_x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="n">deviation</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="n">deviation</span><span class="p">))</span>
+    <span class="n">all_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">all_x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">all_x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">all_x</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">all_y</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="s1">&#39;experiment&#39;</span><span class="p">,</span> <span class="p">),</span> <span class="n">x</span><span class="p">),</span>
+                 <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="s1">&#39;experiment&#39;</span><span class="p">,</span> <span class="p">),</span> <span class="n">y</span><span class="p">)})</span>
+<span class="n">ds</span>
 </pre></div>
 </div>
 </div>
@@ -496,7 +495,7 @@ Data variables:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.plot.lineplot(ds, name=&#39;y&#39;, coord=&#39;x&#39;, marker=&#39;o&#39;, linewidth=0)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -522,8 +521,8 @@ psyplot.project.Project([arr0: psyplot.data.InteractiveList([    arr0: 1-dim Dat
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.plot.density(ds, name=&#39;y&#39;, coord=&#39;x&#39;, cmap=&#39;Reds&#39;, bins=50, density=&#39;kde&#39;,
-                 clabel=&#39;Kernel density&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span>
+                 <span class="n">clabel</span><span class="o">=</span><span class="s1">&#39;Kernel density&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -549,11 +548,11 @@ psyplot.project.Project([    arr1: 1-dim DataArray of y, with (experiment)=(1500
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
-psy.plot.densityreg(ds, name=&#39;y&#39;, coord=&#39;x&#39;, cmap=&#39;Reds&#39;, bins=50, density=&#39;kde&#39;,
-                    clabel=&#39;Kernel density&#39;,
-                    color=&#39;Blues_r&#39;, fit=lambda x, a: np.sin(a * x),
-                    legendlabels=&#39;$\sin (%(a)1.2f * %(xname)s$)&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">densityreg</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">,</span>
+                    <span class="n">clabel</span><span class="o">=</span><span class="s1">&#39;Kernel density&#39;</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Blues_r&#39;</span><span class="p">,</span> <span class="n">fit</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="p">),</span>
+                    <span class="n">legendlabels</span><span class="o">=</span><span class="s1">&#39;$\sin (</span><span class="si">%(a)1.2f</span><span class="s1"> * </span><span class="si">%(xname)s</span><span class="s1">$)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -578,7 +577,7 @@ psyplot.project.Project([    arr0: 1-dim DataArray of y, with (experiment)=(1500
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

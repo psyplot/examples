@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sharing formatoptions &mdash; psyplot-examples version 6adc493</title>
+  <title>Sharing formatoptions &mdash; psyplot-examples version db41de4</title>
   
 
   
@@ -98,7 +98,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sharing formatoptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example_post.html">Applying your own post processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example_post.html#Saving-and-loading">Saving and loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_cdo.html">Usage of Climate Data Operators</a></li>
 </ul>
 
             
@@ -421,10 +420,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/6adc493/general/example_sharing.ipynb">general/example_sharing.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/general/example_sharing.ipynb">general/example_sharing.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/6adc493?filepath=general/example_sharing.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=general/example_sharing.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -451,10 +450,10 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import psyplot.project as psy
-%matplotlib inline
-%config InlineBackend.close_figures = False
-fname = &#39;sharing_demo.nc&#39;
+<span></span><span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
+<span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;sharing_demo.nc&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -464,7 +463,7 @@ fname = &#39;sharing_demo.nc&#39;
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps = psy.plot.mapplot(fname, name=&#39;t2m&#39;, title=&#39;{dinfo}&#39;, ax=(2, 2), time=range(4))
+<span></span><span class="n">maps</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapplot</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t2m&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{dinfo}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">time</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -481,8 +480,8 @@ fname = &#39;sharing_demo.nc&#39;
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps.share(keys=&#39;bounds&#39;)
-maps.show()
+<span></span><span class="n">maps</span><span class="o">.</span><span class="n">share</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="s1">&#39;bounds&#39;</span><span class="p">)</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -500,7 +499,7 @@ maps.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps[0].psy.plotter.groups
+<span></span><span class="n">maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">groups</span>
 </pre></div>
 </div>
 </div>
@@ -525,10 +524,10 @@ maps.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>maps.unshare(keys=&#39;bounds&#39;)
-# Now we share the color settings of the last one
-arr = maps[-1]
-maps[:-1].share(arr, keys=&#39;colors&#39;)
+<span></span><span class="n">maps</span><span class="o">.</span><span class="n">unshare</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="s1">&#39;bounds&#39;</span><span class="p">)</span>
+<span class="c1"># Now we share the color settings of the last one</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">maps</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">maps</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">share</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="s1">&#39;colors&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -538,8 +537,8 @@ maps[:-1].share(arr, keys=&#39;colors&#39;)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>arr.psy.update(cmap=&#39;RdBu_r&#39;, projection=&#39;robin&#39;, time=4)
-maps.show()
+<span></span><span class="n">arr</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -555,7 +554,7 @@ maps.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

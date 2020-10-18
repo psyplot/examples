@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Applying your own post processing &mdash; psyplot-examples version 6adc493</title>
+  <title>Applying your own post processing &mdash; psyplot-examples version db41de4</title>
   
 
   
@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sharing formatoptions" href="example_sharing.html" />
-    <link rel="prev" title="Usage of Climate Data Operators" href="example_cdo.html" /> 
+    <link rel="prev" title="General Examples" href="README.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,7 +102,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#Saving-and-loading">Saving and loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_cdo.html">Usage of Climate Data Operators</a></li>
 </ul>
 
             
@@ -425,10 +424,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/6adc493/general/example_post.ipynb">general/example_post.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/general/example_post.ipynb">general/example_post.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/6adc493?filepath=general/example_post.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=general/example_post.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -454,9 +453,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import psyplot.project as psy
-%matplotlib inline
-%config InlineBackend.close_figures = False
+<span></span><span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
 </pre></div>
 </div>
 </div>
@@ -468,9 +467,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp = psy.plot.mapvector(&#39;demo.nc&#39;, name=[[&#39;u&#39;, &#39;v&#39;]], plot=&#39;stream&#39;,
-                        color=&#39;red&#39;, title=&#39;%b %Y&#39;)
-print(sp)
+<span></span><span class="n">sp</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapvector</span><span class="p">(</span><span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]],</span> <span class="n">plot</span><span class="o">=</span><span class="s1">&#39;stream&#39;</span><span class="p">,</span>
+                        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;%b %Y&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -496,9 +495,9 @@ psyplot.project.Project([    arr0: 3-dim DataArray of u, v, with (variable, lat,
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp.update(enable_post=True,
-          post=&#39;self.stock_img = self.ax.stock_img()&#39;)
-sp.show()
+<span></span><span class="n">sp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">enable_post</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+          <span class="n">post</span><span class="o">=</span><span class="s1">&#39;self.stock_img = self.ax.stock_img()&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -529,7 +528,7 @@ sp.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp.plotters[0].plot_data
+<span></span><span class="n">sp</span><span class="o">.</span><span class="n">plotters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot_data</span>
 </pre></div>
 </div>
 </div>
@@ -576,17 +575,17 @@ Attributes:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp.update(post=&quot;&quot;&quot;
-self.stock_img = self.ax.stock_img()
-umean = self.data[0].mean().values
-vmean = self.data[1].mean().values
-abs_mean = ((self.data[0]**2 + self.data[1]**2)**0.5).mean().values
-self.text = self.ax.text(
-    0., -0.15,
-    &#39;u: %1.4f m/s, v: %1.4f m/s, wind speed: %1.4f m/s&#39; % (
-        umean, vmean, abs_mean),
-    transform=self.ax.transAxes)&quot;&quot;&quot;)
-sp.show()
+<span></span><span class="n">sp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">post</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">self.stock_img = self.ax.stock_img()</span>
+<span class="s2">umean = self.data[0].mean().values</span>
+<span class="s2">vmean = self.data[1].mean().values</span>
+<span class="s2">abs_mean = ((self.data[0]**2 + self.data[1]**2)**0.5).mean().values</span>
+<span class="s2">self.text = self.ax.text(</span>
+<span class="s2">    0., -0.15,</span>
+<span class="s2">    &#39;u: </span><span class="si">%1.4f</span><span class="s2"> m/s, v: </span><span class="si">%1.4f</span><span class="s2"> m/s, wind speed: </span><span class="si">%1.4f</span><span class="s2"> m/s&#39; % (</span>
+<span class="s2">        umean, vmean, abs_mean),</span>
+<span class="s2">    transform=self.ax.transAxes)&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -612,9 +611,9 @@ sp.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp.update(time=1)
-print(sp)
-sp.show()
+<span></span><span class="n">sp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -643,20 +642,20 @@ psyplot.project.Project([    arr0: 3-dim DataArray of u, v, with (variable, lat,
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp.update(post_timing=&#39;replot&#39;, post=&quot;&quot;&quot;
-self.stock_img = self.ax.stock_img()
-umean = self.data[0].mean().values
-vmean = self.data[1].mean().values
-abs_mean = ((self.data[0]**2 + self.data[1]**2)**0.5).mean().values
-if hasattr(self, &#39;text&#39;):
-    text = self.text
-else:
-    text = self.ax.text(0., -0.15, &#39;&#39;,
-                        transform=self.ax.transAxes)
-text.set_text(
-    &#39;u: %1.4f m/s, v: %1.4f m/s, wind speed: %1.4f m/s&#39; % (
-        umean, vmean, abs_mean))&quot;&quot;&quot;)
-sp.show()
+<span></span><span class="n">sp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">post_timing</span><span class="o">=</span><span class="s1">&#39;replot&#39;</span><span class="p">,</span> <span class="n">post</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">self.stock_img = self.ax.stock_img()</span>
+<span class="s2">umean = self.data[0].mean().values</span>
+<span class="s2">vmean = self.data[1].mean().values</span>
+<span class="s2">abs_mean = ((self.data[0]**2 + self.data[1]**2)**0.5).mean().values</span>
+<span class="s2">if hasattr(self, &#39;text&#39;):</span>
+<span class="s2">    text = self.text</span>
+<span class="s2">else:</span>
+<span class="s2">    text = self.ax.text(0., -0.15, &#39;&#39;,</span>
+<span class="s2">                        transform=self.ax.transAxes)</span>
+<span class="s2">text.set_text(</span>
+<span class="s2">    &#39;u: </span><span class="si">%1.4f</span><span class="s2"> m/s, v: </span><span class="si">%1.4f</span><span class="s2"> m/s, wind speed: </span><span class="si">%1.4f</span><span class="s2"> m/s&#39; % (</span>
+<span class="s2">        umean, vmean, abs_mean))&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -673,8 +672,8 @@ sp.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp.update(time=2)
-sp.show()
+<span></span><span class="n">sp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -695,7 +694,7 @@ sp.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>d = sp.save_project()
+<span></span><span class="n">d</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">save_project</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -705,8 +704,8 @@ sp.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
-sp = psy.Project.load_project(d, enable_post=True)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">Project</span><span class="o">.</span><span class="n">load_project</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">enable_post</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -722,7 +721,7 @@ sp = psy.Project.load_project(d, enable_post=True)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -739,7 +738,7 @@ sp = psy.Project.load_project(d, enable_post=True)
         <a href="example_sharing.html" class="btn btn-neutral float-right" title="Sharing formatoptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="example_cdo.html" class="btn btn-neutral float-left" title="Usage of Climate Data Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="README.html" class="btn btn-neutral float-left" title="General Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

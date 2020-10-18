@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Line plot demo &mdash; psyplot-examples version 6adc493</title>
+  <title>Line plot demo &mdash; psyplot-examples version db41de4</title>
   
 
   
@@ -101,7 +101,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/example_sharing.html">Sharing formatoptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html">Applying your own post processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html#Saving-and-loading">Saving and loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../general/example_cdo.html">Usage of Climate Data Operators</a></li>
 </ul>
 
             
@@ -424,10 +423,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/6adc493/simple/example_line.ipynb">simple/example_line.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/simple/example_line.ipynb">simple/example_line.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/6adc493?filepath=simple/example_line.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=simple/example_line.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -452,9 +451,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>import psyplot.project as psy
-import numpy as np
-%config InlineBackend.close_figures = False
+<span></span><span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
 </pre></div>
 </div>
 </div>
@@ -463,17 +462,17 @@ import numpy as np
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>axes = iter(psy.multiple_subplots(2, 2, n=3))
-for var in [&#39;t2m&#39;, &#39;u&#39;, &#39;v&#39;]:
-    psy.plot.lineplot(
-        &#39;demo.nc&#39;,  # netCDF file storing the data
-        name=var, # one plot for each variable
-        t=range(5),  # one line for each time step
-        z=0, x=0,      # choose latitude and longitude as dimensions
-        ylabel=&quot;{desc}&quot;,  # use the longname and units on the y-axis
-        ax=next(axes),
-        color=&#39;coolwarm&#39;,
-    )
+<span></span><span class="n">axes</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">psy</span><span class="o">.</span><span class="n">multiple_subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;t2m&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]:</span>
+    <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span>
+        <span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span>  <span class="c1"># netCDF file storing the data</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">var</span><span class="p">,</span> <span class="c1"># one plot for each variable</span>
+        <span class="n">t</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>  <span class="c1"># one line for each time step</span>
+        <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>      <span class="c1"># choose latitude and longitude as dimensions</span>
+        <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{desc}</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1"># use the longname and units on the y-axis</span>
+        <span class="n">ax</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">axes</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -490,11 +489,11 @@ for var in [&#39;t2m&#39;, &#39;u&#39;, &#39;v&#39;]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp = psy.gcp(True)
-sp.update(
-    legendlabels=&quot;%B&quot;,   # use the Month as label for the legend
-)
-sp.show()
+<span></span><span class="n">sp</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">gcp</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="n">legendlabels</span><span class="o">=</span><span class="s2">&quot;%B&quot;</span><span class="p">,</span>   <span class="c1"># use the Month as label for the legend</span>
+<span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -511,18 +510,18 @@ sp.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp[1:].update(legend=False)  # disable the legend for the second and third plot
-sp[0].psy.update(
-    legend=dict(
-        title=&quot;Month&quot;,
-        loc=&quot;upper center&quot;,
-        bbox_to_anchor=(1.1, 1.3),
-        ncol=5,
-        fontsize=&quot;xx-large&quot;,
-        title_fontsize=&quot;xx-large&quot;,
-    )
-)
-sp.show()
+<span></span><span class="n">sp</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># disable the legend for the second and third plot</span>
+<span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Month&quot;</span><span class="p">,</span>
+        <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">,</span>
+        <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">),</span>
+        <span class="n">ncol</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">fontsize</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">,</span>
+        <span class="n">title_fontsize</span><span class="o">=</span><span class="s2">&quot;xx-large&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -538,7 +537,7 @@ sp.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp.close()
+<span></span><span class="n">sp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -551,9 +550,9 @@ sp.show()
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>ds = psy.open_dataset(&quot;demo.nc&quot;)
-ds[&quot;u_std&quot;] = ds.u.copy(data=np.ones_like(ds.u) * 3)
-ds
+<span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;demo.nc&quot;</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s2">&quot;u_std&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ds</span>
 </pre></div>
 </div>
 </div>
@@ -1128,16 +1127,16 @@ dl.xr-attrs {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp = ds.psy.plot.lineplot(
-    name=[[[&quot;u&quot;, &quot;u_std&quot;]]],
-    t=range(2),          # one line for each time step
-    z=0, x=0,            # choose latitude and longitude as dimensions
-    ylabel=&quot;{desc}&quot;,     # use the longname and units on the y-axis
-    xlabel=&quot;{desc}&quot;,     # use the longname and units on the x-axis
-    color=&quot;coolwarm&quot;,
-    legendlabels=&quot;%B&quot;,   # use the Month as label for the legend ()
-    legend={&quot;loc&quot;: &quot;upper center&quot;, &quot;bbox_to_anchor&quot;: (0.5, 1.2), &quot;ncol&quot;: 2, &quot;title&quot;: &quot;Month&quot;},
-)
+<span></span><span class="n">sp</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">[[[</span><span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="s2">&quot;u_std&quot;</span><span class="p">]]],</span>
+    <span class="n">t</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>          <span class="c1"># one line for each time step</span>
+    <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>            <span class="c1"># choose latitude and longitude as dimensions</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{desc}</span><span class="s2">&quot;</span><span class="p">,</span>     <span class="c1"># use the longname and units on the y-axis</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{desc}</span><span class="s2">&quot;</span><span class="p">,</span>     <span class="c1"># use the longname and units on the x-axis</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span>
+    <span class="n">legendlabels</span><span class="o">=</span><span class="s2">&quot;%B&quot;</span><span class="p">,</span>   <span class="c1"># use the Month as label for the legend ()</span>
+    <span class="n">legend</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="s2">&quot;upper center&quot;</span><span class="p">,</span> <span class="s2">&quot;bbox_to_anchor&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span> <span class="s2">&quot;ncol&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Month&quot;</span><span class="p">},</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1154,7 +1153,7 @@ dl.xr-attrs {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp
+<span></span><span class="n">sp</span>
 </pre></div>
 </div>
 </div>
@@ -1175,7 +1174,7 @@ psyplot.project.Project([arr3: psyplot.data.InteractiveList([
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>sp[0][0]
+<span></span><span class="n">sp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1579,7 +1578,7 @@ dl.xr-attrs {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>ds[[&quot;u&quot;, &quot;u_std&quot;]].isel(time=0, lon=0, lev=0).to_array()
+<span></span><span class="n">ds</span><span class="p">[[</span><span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="s2">&quot;u_std&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lev</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to_array</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1983,7 +1982,7 @@ dl.xr-attrs {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>psy.close(&#39;all&#39;)
+<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
