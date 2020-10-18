@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic data visualization on a map &mdash; psyplot-examples version db41de4</title>
+  <title>Basic data visualization on a map &mdash; psyplot-examples version bb05203</title>
   
 
   
@@ -426,10 +426,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/maps/example_mapplotters.ipynb">maps/example_mapplotters.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/bb05203/maps/example_mapplotters.ipynb">maps/example_mapplotters.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=maps/example_mapplotters.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/bb05203?filepath=maps/example_mapplotters.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -493,11 +493,21 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_simple/plotters.py:3011: MatplotlibDeprecationWarning:
+The on_mappable_changed function was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use update_normal instead.
+  mappable.changed()
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/maps_example_mapplotters_5_0.png" src="../_images/maps_example_mapplotters_5_0.png" />
+<img alt="../_images/maps_example_mapplotters_5_1.png" src="../_images/maps_example_mapplotters_5_1.png" />
 </div>
 </div>
 <p>Especially useful formatoption keywords are</p>
@@ -555,6 +565,13 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
+******************
+Axes formatoptions
+******************
++------------+------------+------------+
+| background | tight      | transpose  |
++------------+------------+------------+
+
 **************************
 Color coding formatoptions
 **************************
@@ -563,7 +580,7 @@ Color coding formatoptions
 +-------------+-------------+-------------+-------------+
 | ctickprops  | cticksize   | ctickweight | extend      |
 +-------------+-------------+-------------+-------------+
-| miss_color  |             |             |             |
+| levels      | miss_color  |             |             |
 +-------------+-------------+-------------+-------------+
 
 *******************
@@ -583,11 +600,13 @@ Label formatoptions
 Miscallaneous formatoptions
 ***************************
 +----------------+----------------+----------------+----------------+
-| clat           | clon           | datagrid       | grid_color     |
+| clat           | clip           | clon           | datagrid       |
 +----------------+----------------+----------------+----------------+
-| grid_labels    | grid_labelsize | grid_settings  | lonlatbox      |
+| grid_color     | grid_labels    | grid_labelsize | grid_settings  |
 +----------------+----------------+----------------+----------------+
-| lsm            | map_extent     | projection     | transform      |
+| interp_bounds  | lonlatbox      | lsm            | map_extent     |
++----------------+----------------+----------------+----------------+
+| mask_datagrid  | projection     | stock_img      | transform      |
 +----------------+----------------+----------------+----------------+
 | xgrid          | ygrid          |                |                |
 +----------------+----------------+----------------+----------------+
@@ -603,9 +622,9 @@ Axis tick formatoptions
 Masking formatoptions
 *********************
 +-------------+-------------+-------------+-------------+
-| maskbetween | maskgeq     | maskgreater | maskleq     |
+| mask        | maskbetween | maskgeq     | maskgreater |
 +-------------+-------------+-------------+-------------+
-| maskless    |             |             |             |
+| maskleq     | maskless    |             |             |
 +-------------+-------------+-------------+-------------+
 
 ******************
@@ -615,12 +634,12 @@ Plot formatoptions
 | plot |
 +------+
 
-******************
-Axes formatoptions
-******************
-+-------+
-| tight |
-+-------+
+*****************************
+Post processing formatoptions
+*****************************
++-------------+-------------+
+| post        | post_timing |
++-------------+-------------+
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -754,15 +773,15 @@ Axes formatoptions
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 +--------------+--------------+--------------+--------------+
-| vcmap        | vcticksize   | color        | vcbar        |
+| color        | vcbar        | vcbarspacing | vcmap        |
 +--------------+--------------+--------------+--------------+
-| vctickprops  | vctickweight | vbounds      | vcbarspacing |
+| vbounds      | vcticksize   | vctickweight | vctickprops  |
 +--------------+--------------+--------------+--------------+
-| bounds       | cbar         | miss_color   | extend       |
+| cbar         | bounds       | levels       | miss_color   |
 +--------------+--------------+--------------+--------------+
-| ctickweight  | ctickprops   | cbarspacing  | cmap         |
+| cmap         | extend       | cbarspacing  | cticksize    |
 +--------------+--------------+--------------+--------------+
-| cticksize    |              |              |              |
+| ctickweight  | ctickprops   |              |              |
 +--------------+--------------+--------------+--------------+
 </pre></div></div>
 </div>
@@ -777,11 +796,21 @@ Axes formatoptions
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_simple/plotters.py:3011: MatplotlibDeprecationWarning:
+The on_mappable_changed function was deprecated in Matplotlib 3.3 and will be removed two minor releases later. Use update_normal instead.
+  mappable.changed()
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/maps_example_mapplotters_28_0.png" src="../_images/maps_example_mapplotters_28_0.png" />
+<img alt="../_images/maps_example_mapplotters_28_1.png" src="../_images/maps_example_mapplotters_28_1.png" />
 </div>
 </div>
 </div>

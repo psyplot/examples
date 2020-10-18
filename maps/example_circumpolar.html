@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Visualizing circumpolar data &mdash; psyplot-examples version db41de4</title>
+  <title>Visualizing circumpolar data &mdash; psyplot-examples version bb05203</title>
   
 
   
@@ -426,10 +426,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/maps/example_circumpolar.ipynb">maps/example_circumpolar.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/bb05203/maps/example_circumpolar.ipynb">maps/example_circumpolar.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=maps/example_circumpolar.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/bb05203?filepath=maps/example_circumpolar.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -494,12 +494,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/Users/psommer/miniconda3/lib/python3.6/site-packages/matplotlib/colors.py:1221: RuntimeWarning: invalid value encountered in greater_equal
-  iret[xx &gt;= b] = i
-/Users/psommer/miniconda3/lib/python3.6/site-packages/matplotlib/colors.py:1225: RuntimeWarning: invalid value encountered in less
-  iret[xx &lt; self.vmin] = -1
-/Users/psommer/miniconda3/lib/python3.6/site-packages/matplotlib/colors.py:1226: RuntimeWarning: invalid value encountered in greater_equal
-  iret[xx &gt;= self.vmax] = max_col
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/mpl/geoaxes.py:1597: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+  X, Y, C, shading = self._pcolorargs(&#39;pcolormesh&#39;, *args,
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -521,11 +517,20 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/mpl/geoaxes.py:1597: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+  X, Y, C, shading = self._pcolorargs(&#39;pcolormesh&#39;, *args,
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/maps_example_circumpolar_5_0.png" src="../_images/maps_example_circumpolar_5_0.png" />
+<img alt="../_images/maps_example_circumpolar_5_1.png" src="../_images/maps_example_circumpolar_5_1.png" />
 </div>
 </div>
 <p>We can also use the <code class="docutils literal notranslate"><span class="pre">clon</span></code> and <code class="docutils literal notranslate"><span class="pre">clat</span></code> formatoptions to focus on Greenland. Here, we might also want to change the projection since the <em>northpole</em> projection implies <code class="docutils literal notranslate"><span class="pre">clat=0</span></code></p>
@@ -538,11 +543,20 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/mpl/geoaxes.py:1597: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+  X, Y, C, shading = self._pcolorargs(&#39;pcolormesh&#39;, *args,
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/maps_example_circumpolar_7_0.png" src="../_images/maps_example_circumpolar_7_0.png" />
+<img alt="../_images/maps_example_circumpolar_7_1.png" src="../_images/maps_example_circumpolar_7_1.png" />
 </div>
 </div>
 <p>Despite the beautiness of these plots, there are a few things to notice when it comes to circumpolar plots</p>
@@ -602,8 +616,8 @@ array([[-1., -1., -1., ..., -1., -1., -1.],
        [-1., -1., -1., ..., -1., -1., -1.],
        [-1., -1., -1., ..., -1., -1., -1.]], dtype=float32)
 Coordinates:
-    lon      (y, x) float64 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 ...
-    lat      (y, x) float64 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 ...
+    lon      (y, x) float64 ...
+    lat      (y, x) float64 ...
 Dimensions without coordinates: y, x
 Attributes:
     standard_name:  Sea_Ice_Concentration
@@ -620,14 +634,13 @@ array([[-1., -1., -1., ..., -1., -1., -1.],
        [-1., -1., -1., ..., -1., -1., -1.],
        [-1., -1., -1., ..., -1., -1., -1.]], dtype=float32)
 Coordinates:
-    lon      (y, x) float64 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 ...
-    lat      (y, x) float64 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 -999.0 ...
+    lon      (y, x) float64 ...
+    lat      (y, x) float64 ...
 Dimensions without coordinates: y, x
 Attributes:
     standard_name:  Sea_Ice_Concentration
     long_name:      Sea_Ice_Concentration
     units:          Percent
-    coordinates:    lat lon
     short_name:     concentration
 </pre></div></div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bar plot demo &mdash; psyplot-examples version db41de4</title>
+  <title>Bar plot demo &mdash; psyplot-examples version bb05203</title>
   
 
   
@@ -420,10 +420,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/db41de4/simple/example_bar.ipynb">simple/example_bar.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/bb05203/simple/example_bar.ipynb">simple/example_bar.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/db41de4?filepath=simple/example_bar.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/bb05203?filepath=simple/example_bar.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -443,7 +443,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="Bar-plot-demo">
 <h1>Bar plot demo<a class="headerlink" href="#Bar-plot-demo" title="Permalink to this headline">¶</a></h1>
 <p>This example shows you how to make a bar plot using the <code class="docutils literal notranslate"><span class="pre">psyplot.project.plot.barplot</span></code> method.</p>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -453,14 +453,6 @@ div.rendered_html tbody tr:hover {
 <span class="o">%</span><span class="k">config</span> InlineBackend.close_figures = False
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -485,11 +477,27 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_simple/plugin.py:423: MatplotlibDeprecationWarning:
+The validate_legend_loc function was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+  return {&#39;loc&#39;: validate_legend_loc(value)}
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_simple/plugin.py:423: MatplotlibDeprecationWarning:
+The validate_legend_loc function was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+  return {&#39;loc&#39;: validate_legend_loc(value)}
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_simple/plugin.py:423: MatplotlibDeprecationWarning:
+The validate_legend_loc function was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
+  return {&#39;loc&#39;: validate_legend_loc(value)}
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/simple_example_bar_2_0.png" src="../_images/simple_example_bar_2_0.png" />
+<img alt="../_images/simple_example_bar_2_1.png" src="../_images/simple_example_bar_2_1.png" />
 </div>
 </div>
 <p>The default is that all bars have the same width. You can however change that by setting the <code class="docutils literal notranslate"><span class="pre">widths</span></code> keyword to <code class="docutils literal notranslate"><span class="pre">data</span></code></p>
