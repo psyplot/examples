@@ -8,6 +8,7 @@ dependencies:
 - netcdf4
 - pip
 - ncview
+- seaborn
 
 # Required for jupyter-desktop-server
 - websockify
