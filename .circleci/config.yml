@@ -1,0 +1,50 @@
+version: 2.1
+
+commands:
+  install_conda:
+    description: "Install miniconda"
+    steps:
+      - checkout
+      - run:
+          name: install apt requirements
+          command: |
+            sudo apt-get update
+            sudo apt-get install libgl1-mesa-glx libegl1-mesa-dev
+      - run:
+          name: Install conda
+          command: |
+            echo ""
+            echo "Installing a fresh version of Miniconda."
+            MINICONDA_URL="https://repo.continuum.io/miniconda"
+            MINICONDA_FILE="Miniconda3-latest-Linux-x86_64.sh"
+            curl -L -O "${MINICONDA_URL}/${MINICONDA_FILE}"
+            bash $MINICONDA_FILE -bp $HOME/miniconda3
+  build_docs:
+    description: Install and build the docs
+    steps:
+      - run:
+          name: Install the conda environment
+          command: conda env create -f .circleci/environment.yml -n docs
+      - run:
+          name: Build the docs
+          command: |
+            which conda || source $HOME/miniconda3/bin/activate base
+            conda activate docs
+            sphinx-build . _build
+
+jobs:
+  build_docs:
+    working_directory: ~/test
+    machine: true
+    steps:
+      - install_conda
+      - build_docs
+      - store_artifacts:
+          path: ~/repo/_build
+          destination: docs
+
+workflows:
+  version: 2.1
+  build_docs:
+    jobs:
+      - build_docs

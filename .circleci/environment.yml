@@ -1,0 +1,11 @@
+channels:
+- psyplot/label/master
+- psyplot
+- conda-forge
+dependencies:
+- psy-maps
+- psy-reg
+- netcdf4
+- nbsphinx
+- sphinx-gallery
+- sphinx_rtd_theme
