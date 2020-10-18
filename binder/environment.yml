@@ -1,0 +1,15 @@
+channels:
+- psyplot/label/master
+- manics # Used by jupyter-desktop-server
+- conda-forge
+dependencies:
+- psy-view
+- psy-reg
+- netcdf4
+- pip
+- ncview
+
+# Required for jupyter-desktop-server
+- websockify
+- pip:
+    - jupyter-desktop-server
