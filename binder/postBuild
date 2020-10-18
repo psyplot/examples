@@ -4,9 +4,7 @@ set -euo pipefail
 
 mkdir -p $HOME/Desktop
 
-cp -r tests/*.nc $HOME/Desktop
-
-python -m pip install ./
+cp -r binder/*.nc $HOME/Desktop
 
 cat > $HOME/Desktop/Psy-View.desktop << EOF
 [Desktop Entry]
