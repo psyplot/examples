@@ -1,0 +1,1018 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Visualizing unstructured data &mdash; psyplot-examples version 8517149</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Regression Examples" href="../regression-analysis/README.html" />
+    <link rel="prev" title="Basic data visualization on a map" href="example_mapplotters.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> psyplot-examples
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../regression-analysis/example_densityreg.html">Plot a fit over a density plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../regression-analysis/example_basic_fit.html">Creating and accessing a fit</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Visualizing unstructured data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Visualizing-UGRID-data">Visualizing UGRID data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Visualizing-scalar-and-vector-ICON-data">Visualizing scalar and vector ICON data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#The-handling-unstructured-grids">The handling unstructured grids</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Interpreting-the-UGRID-Conventions">Interpreting the UGRID Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Interpreting-the-CF-Conventions">Interpreting the CF Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Identification-of-unstructured-variables">Identification of unstructured variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Acknowledgement">Acknowledgement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example_mapplotters.html">Basic data visualization on a map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_circumpolar.html">Visualizing circumpolar data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_violin.html">Violin plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_vector.html">Vector plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_plot2d.html">2D plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_line.html">Line plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_bar.html">Bar plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/example_sharing.html">Sharing formatoptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/example_post.html">Applying your own post processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/example_post.html#Saving-and-loading">Saving and loading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/example_cdo.html">Usage of Climate Data Operators</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">psyplot-examples</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Visualizing unstructured data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/maps/example_ugrid.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="admonition note">
+  This page was generated from
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/8517149/maps/example_ugrid.ipynb">maps/example_ugrid.ipynb</a>.
+  <br>
+  Interactive online version:
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/8517149?filepath=maps/example_ugrid.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <script>
+    if (document.location.host) {
+      $(document.currentScript).replaceWith(
+        '<a class="reference external" ' +
+        'href="https://nbviewer.jupyter.org/url' +
+        (window.location.protocol == 'https:' ? 's/' : '/') +
+        window.location.host +
+        window.location.pathname.slice(0, -4) +
+        'ipynb">View in <em>nbviewer</em></a>.'
+      );
+    }
+  </script>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This examples needs the following files:</p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/c8ccf6e61c8a76db0065720e09d2ed6e/icon_grid_demo.nc"><code class="xref download docutils literal notranslate"><span class="pre">icon_grid_demo.nc</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/3fe9a9cde72c892e7e26accd0a57cff8/ugrid_demo.nc"><code class="xref download docutils literal notranslate"><span class="pre">ugrid_demo.nc</span></code></a></p></li>
+</ul>
+</div>
+<div class="section" id="Visualizing-unstructured-data">
+<h1>Visualizing unstructured data<a class="headerlink" href="#Visualizing-unstructured-data" title="Permalink to this headline">¶</a></h1>
+<p>Example visualization of unstructured ICON and UGRID data.</p>
+<p>Here we show, how the psy-maps plugin can visualize the unstructured grid of the Earth System Model <a class="reference external" href="http://www.mpimet.mpg.de/en/science/models/icon-esm.html">ICON</a> from the Max-Planck-Institute for Meteorology in Hamburg, Germany, and data following the unstructured grids (<a class="reference external" href="http://ugrid-conventions.github.io/ugrid-conventions/">UGRID</a>). The visualization works the same as for normal rectilinear grids. Internally, however, the coordinates are interpreted in a completely different way (see
+below for a detailed explanation).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>import psyplot.project as psy
+import matplotlib as mpl
+%matplotlib inline
+%config InlineBackend.close_figures = False
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>psy.rcParams[&#39;plotter.maps.xgrid&#39;] = False
+psy.rcParams[&#39;plotter.maps.ygrid&#39;] = False
+mpl.rcParams[&#39;figure.figsize&#39;] = [10., 8.]
+</pre></div>
+</div>
+</div>
+<div class="section" id="Visualizing-UGRID-data">
+<h2>Visualizing UGRID data<a class="headerlink" href="#Visualizing-UGRID-data" title="Permalink to this headline">¶</a></h2>
+<p>A widely accepted approach for unstructured grids are the so-called UGRID Conventions. For a demonstration, we use the <code class="docutils literal notranslate"><span class="pre">'ugrid_demo.nc'</span></code> netCDF file that contains sea surface height of a Tsunami simulation. We use the <code class="docutils literal notranslate"><span class="pre">load</span></code> parameter, to directly load it into memory. That speeds up the plotting of the data.</p>
+<p>psyplot automatically recognizes the UGRID conventions and adapts it’s plotting algorithm for displaying the data. For this simulation, let’s focus on Japan. We use the <code class="docutils literal notranslate"><span class="pre">maskleq</span></code> keyword here to mask the land surface and display a <code class="docutils literal notranslate"><span class="pre">stock_img</span></code> on the continents.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>tsunami = psy.plot.mapplot(
+    &#39;ugrid_demo.nc&#39;, name=&#39;Mesh2_height&#39;, load=True,
+    maskleq=0, lonlatbox=&#39;Japan&#39;, cmap=&#39;Blues&#39;,
+    clabel=&#39;{desc}&#39;, stock_img=True, lsm=&#39;50m&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/maps_example_ugrid_4_0.png" src="../_images/maps_example_ugrid_4_0.png" />
+</div>
+</div>
+<p>To visualize the unstructured grid, we can use the <code class="docutils literal notranslate"><span class="pre">datagrid</span></code> formatoption. It excepts a string or the line properties.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>tsunami.docs(&#39;datagrid&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+datagrid
+========
+Show the grid of the data
+
+This formatoption shows the grid of the data (without labels)
+
+Possible types
+--------------
+None
+    Don&#39;t show the data grid
+str
+    A linestyle in the form ``&#39;k-&#39;``, where ``&#39;k&#39;`` is the color and
+    ``&#39;-&#39;`` the linestyle.
+dict
+    any keyword arguments that are passed to the plotting function (
+    :func:`matplotlib.pyplot.triplot` for triangular grids and
+    :func:`matplotlib.pyplot.hlines` for rectilinear grids)
+See Also
+--------
+xgrid
+ygrid
+
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>tsunami.update(datagrid={&#39;c&#39;: &#39;k&#39;, &#39;lw&#39;: 0.1})
+tsunami.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/maps_example_ugrid_7_0.png" src="../_images/maps_example_ugrid_7_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>tsunami.close()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Visualizing-scalar-and-vector-ICON-data">
+<h2>Visualizing scalar and vector ICON data<a class="headerlink" href="#Visualizing-scalar-and-vector-ICON-data" title="Permalink to this headline">¶</a></h2>
+<p>This section requires the psy-maps plugin and the file <code class="docutils literal notranslate"><span class="pre">'icon_grid_demo.nc'</span></code> which contains one variable for the temperature, one for zonal and one for the meridional wind direction.</p>
+<p>The visualization works the same way as for a usual rectangular grid. We choose a robinson projection and a colormap ranging from blue to red.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>maps = psy.plot.mapplot(&#39;icon_grid_demo.nc&#39;, name=&#39;t2m&#39;, projection=&#39;robin&#39;,
+                        cmap=&#39;RdBu_r&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/maps_example_ugrid_10_0.png" src="../_images/maps_example_ugrid_10_0.png" />
+</div>
+</div>
+<p>We can again zoom in to Europe and use the <code class="docutils literal notranslate"><span class="pre">datagrid</span></code> formatoption to display the triangular grid.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>maps.update(lonlatbox=&#39;Europe&#39;, datagrid=dict(color=&#39;k&#39;, linewidth=0.2))
+maps.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/maps_example_ugrid_12_0.png" src="../_images/maps_example_ugrid_12_0.png" />
+</div>
+</div>
+<p>The same works for vector data</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>vectors = psy.plot.mapvector(
+    &#39;icon_grid_demo.nc&#39;, name=[[&#39;u&#39;, &#39;v&#39;]] * 2, projection=&#39;robin&#39;,
+    ax=(1, 2), lonlatbox=&#39;Europe&#39;)
+vectors.plotters[0].update(arrowsize=100)
+vectors.plotters[1].update(plot=&#39;stream&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/maps_example_ugrid_14_0.png" src="../_images/maps_example_ugrid_14_0.png" />
+</div>
+</div>
+<p>And combined scalar and vector fields</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>combined = psy.plot.mapcombined(
+    &#39;icon_grid_demo.nc&#39;, name=[[&#39;t2m&#39;, [&#39;u&#39;, &#39;v&#39;]]], projection=&#39;robin&#39;,
+    lonlatbox=&#39;Europe&#39;, arrowsize=100, cmap=&#39;RdBu_r&#39;, datagrid={&#39;c&#39;: &#39;k&#39;, &#39;lw&#39;: 0.1})
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/maps_example_ugrid_16_0.png" src="../_images/maps_example_ugrid_16_0.png" />
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">mapplot</span></code> plotmethod does also not care about the shape of the grid cells. Therefore it can also visualize the ICON edge grid:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>maps = psy.plot.mapplot(&#39;icon_grid_demo.nc&#39;, name=&#39;t2m_edge&#39;, projection=&#39;robin&#39;,
+                        cmap=&#39;Wistia&#39;, datagrid=dict(c=&#39;b&#39;, lw=0.2))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/maps_example_ugrid_18_0.png" src="../_images/maps_example_ugrid_18_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="The-handling-unstructured-grids">
+<h2>The handling unstructured grids<a class="headerlink" href="#The-handling-unstructured-grids" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we go a bit into detail into how psyplot interpretes unstructured grids. If your data is an ICON file or follows the UGRID Conventions, you might want to skip this section, because then psyplot can handle your data automatically.</p>
+<div class="section" id="Interpreting-the-UGRID-Conventions">
+<h3>Interpreting the UGRID Conventions<a class="headerlink" href="#Interpreting-the-UGRID-Conventions" title="Permalink to this headline">¶</a></h3>
+<p>The best way to specify unstructured grids is to follow the unstructured grids (<a class="reference external" href="http://ugrid-conventions.github.io/ugrid-conventions/">UGRID</a>) conventions. Variables that follow these conventions are then interpreted by the <a class="reference external" href="https://psyplot.readthedocs.io/en/latest/api/psyplot.data.html#psyplot.data.UGridDecoder">UGridDecoder</a> class. If one variable has a <code class="docutils literal notranslate"><span class="pre">mesh</span></code> attribute, psyplot assumes that it follows the UGRID conventions.</p>
+<p>Furthermore, psyplot interpretes the <code class="docutils literal notranslate"><span class="pre">location</span></code> attribute. Attribute can either live on the <code class="docutils literal notranslate"><span class="pre">edge</span></code>, <code class="docutils literal notranslate"><span class="pre">face</span></code> or the <code class="docutils literal notranslate"><span class="pre">node</span></code> of the grid cell. In case of a variable the lives on the <code class="docutils literal notranslate"><span class="pre">node</span></code>, the data is assumed to be triangular and we plot the data using a Delaunay triangulation.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>ds = tsunami[0].psy.base
+ds
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:           (Three: 3, Two: 2, nMesh2_edge: 171106, nMesh2_face: 113885, nMesh2_node: 57222, time: 1)
+Coordinates:
+    Mesh2             int32 -2147483647
+    Mesh2_node_x      (nMesh2_node) float32 121.0 142.0 131.5 142.0 136.75 ...
+    Mesh2_node_y      (nMesh2_node) float32 -59.2 -59.2 -52.025 -52.025 ...
+    Mesh2_face_nodes  (nMesh2_face, Three) int32 0 1 2 2 1 3 2 3 4 4 3 5 4 5 ...
+  * time              (time) datetime64[ns] 1950-01-01T04:11:59.999742507
+  * nMesh2_face       (nMesh2_face) int64 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 ...
+Dimensions without coordinates: Three, Two, nMesh2_edge, nMesh2_node
+Data variables:
+    Mesh2_edge_nodes  (nMesh2_edge, Two) int32 1 2 2 0 0 1 1 3 2 3 3 4 4 2 3 ...
+    Mesh2_height      (time, nMesh2_face) float32 4069.1465 3689.5886 ...
+    Mesh2_bathy       (time, nMesh2_face) float32 6930.8535 7310.4116 ...
+    Mesh2_m_x         (time, nMesh2_face) float32 -3.3569866e-10 ...
+    Mesh2_m_y         (time, nMesh2_face) float32 1.0910523e-10 ...
+    Mesh2_u_x         (time, nMesh2_face) float32 -8.249855e-14 ...
+    Mesh2_u_y         (time, nMesh2_face) float32 2.6812806e-14 ...
+    Mesh2_level       (time, nMesh2_face) int16 7 8 9 10 10 11 11 10 9 8 8 9 ...
+Attributes:
+    title:              netCDF output from StormFlash2d
+    institution:        University of Hamburg, KlimaCampus
+    contact:            None
+    source:             None
+    references:         None
+    comment:            None
+    Conventions:        UGRID-0.9
+    creation_date:      2014-10-03 15:29:40  02:00
+    modification_date:  2014-10-03 15:29:40  02:00
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>print(&#39;Mesh variable of Mesh2_height:&#39;, ds.Mesh2_height.mesh)
+print(&#39;Location of the variable in the grid cell:&#39;, ds.Mesh2_height.location)
+print(&#39;Name of the location variable:&#39;, ds.Mesh2.face_node_connectivity)
+print(&#39;--------------------------------------------&#39;)
+print(&#39;face node connectivity:&#39;, ds.Mesh2_face_nodes)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Mesh variable of Mesh2_height: Mesh2
+Location of the variable in the grid cell: face
+Name of the location variable: Mesh2_face_nodes
+--------------------------------------------
+face node connectivity: &lt;xarray.DataArray &#39;Mesh2_face_nodes&#39; (nMesh2_face: 113885, Three: 3)&gt;
+array([[    0,     1,     2],
+       [    2,     1,     3],
+       [    2,     3,     4],
+       ...,
+       [57219,     2,     4],
+       [57218,     2, 57219],
+       [57218,     0,     2]], dtype=int32)
+Coordinates:
+    Mesh2             int32 -2147483647
+    Mesh2_face_nodes  (nMesh2_face, Three) int32 0 1 2 2 1 3 2 3 4 4 3 5 4 5 ...
+  * nMesh2_face       (nMesh2_face) int64 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 ...
+Dimensions without coordinates: Three
+Attributes:
+    cf_role:      face_node_connectivity
+    long_name:    Maps every triangular face to its three corner nodes
+    start_index:  0
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Interpreting-the-CF-Conventions">
+<h3>Interpreting the CF Conventions<a class="headerlink" href="#Interpreting-the-CF-Conventions" title="Permalink to this headline">¶</a></h3>
+<p>However, there is also another way that follows more closely the standard <a class="reference external" href="http://cfconventions.org/">CF Conventions</a>. This is also the way, that ICON uses, namely the netCDF attributes <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> and <code class="docutils literal notranslate"><span class="pre">bounds</span></code>. These two attributes are decoded <a class="reference external" href="https://psyplot.readthedocs.io/en/latest/api/psyplot.data.html#psyplot.data.CFDecoder">CFDecoder</a> (namely the <code class="docutils literal notranslate"><span class="pre">DataArray.psy.decoder</span></code> attribute) and used for the visualization.</p>
+<p>To explain it a bit more, we can look into the <code class="docutils literal notranslate"><span class="pre">icon_grid_demo.nc</span></code> file:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>ds = maps[0].psy.base
+ds
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:    (edge: 480, lev: 4, ncells: 5120, no: 4, time: 5, vertices: 3)
+Coordinates:
+  * time       (time) datetime64[ns] 1979-01-31T18:00:00 1979-02-28T18:00:00 ...
+    clon       (ncells) float64 ...
+    clon_bnds  (ncells, vertices) float64 ...
+    clat       (ncells) float64 ...
+    clat_bnds  (ncells, vertices) float64 ...
+    elon       (edge) float32 ...
+    elon_bnds  (edge, no) float32 ...
+    elat       (edge) float32 ...
+    elat_bnds  (edge, no) float32 ...
+  * lev        (lev) float64 1e+05 8.5e+04 5e+04 2e+04
+  * edge       (edge) int64 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 ...
+Dimensions without coordinates: ncells, no, vertices
+Data variables:
+    t2m        (time, lev, ncells) float32 ...
+    u          (time, lev, ncells) float32 ...
+    v          (time, lev, ncells) float32 ...
+    t2m_edge   (time, lev, edge) float32 ...
+Attributes:
+    CDI:                  Climate Data Interface version 1.9.1 (http://mpimet...
+    Conventions:          CF-1.4
+    history:              Thu Aug 30 21:54:23 2018: cdo delname,t2m_2d,u_2d,v...
+    number_of_grid_used:  42
+    uuidOfHGrid:          bf575ad8-daa6-11e7-a4a9-93d511f821b4
+    title:                Temperature and Wind demo-File for python nc2map mo...
+    CDO:                  Climate Data Operators version 1.9.1 (http://mpimet...
+</pre></div></div>
+</div>
+<p>This dataset contains two grid definitions, one for variables living on the face of one grid cell (namely <code class="docutils literal notranslate"><span class="pre">t2m,</span> <span class="pre">u,</span> <span class="pre">v</span></code>) and one for a variable living on the edges of a grid cell (<code class="docutils literal notranslate"><span class="pre">t2m_edge</span></code>). Which grid is chosen, used depends on the <code class="docutils literal notranslate"><span class="pre">coordinates</span></code> attribute of the specific variable:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>print(&#39;t2m:&#39;, ds.t2m.encoding[&#39;coordinates&#39;])
+print(&#39;t2m_edge:&#39;, ds.t2m_edge.encoding[&#39;coordinates&#39;])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+t2m: clat clon
+t2m_edge: elat elon
+</pre></div></div>
+</div>
+<p>The variables mentioned in these coordinates do then have a <code class="docutils literal notranslate"><span class="pre">bounds</span></code> attribute to the variable with the lat-lon information of the vortices for each grid cell</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>print(ds.clat.bounds)
+ds[ds.clat.bounds]
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+clat_bnds
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.DataArray &#39;clat_bnds&#39; (ncells: 5120, vertices: 3)&gt;
+array([[ 0.962634,  0.895414,  0.895414],
+       [ 0.962634,  0.958974,  0.895414],
+       [ 0.895414,  0.828942,  0.895414],
+       ...,
+       [-0.684167, -0.69024 , -0.755691],
+       [-0.755691, -0.818119, -0.746385],
+       [-0.746385, -0.674147, -0.684167]])
+Coordinates:
+    clon       (ncells) float64 ...
+    clon_bnds  (ncells, vertices) float64 ...
+    clat       (ncells) float64 ...
+    clat_bnds  (ncells, vertices) float64 0.9626 0.8954 0.8954 0.9626 0.959 ...
+Dimensions without coordinates: ncells, vertices
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>print(ds.elat.bounds)
+ds[ds.elat.bounds]
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+elat_bnds
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.DataArray &#39;elat_bnds&#39; (edge: 480, no: 4)&gt;
+array([[ 0.809014,  0.737659,  0.809014,  0.918438],
+       [ 0.809014,  0.99046 ,  1.107149,  0.918438],
+       [ 1.107149,  0.99046 ,  0.809014,  0.918438],
+       ...,
+       [-0.809014, -0.87296 , -0.740435, -0.688687],
+       [-0.740435, -0.59862 , -0.530217, -0.688687],
+       [-0.530217, -0.646124, -0.809014, -0.688687]], dtype=float32)
+Coordinates:
+    elon       (edge) float32 ...
+    elon_bnds  (edge, no) float32 ...
+    elat       (edge) float32 ...
+    elat_bnds  (edge, no) float32 0.8090137 0.7376585 0.8090137 0.9184382 ...
+  * edge       (edge) int64 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 ...
+Dimensions without coordinates: no
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Identification-of-unstructured-variables">
+<h3>Identification of unstructured variables<a class="headerlink" href="#Identification-of-unstructured-variables" title="Permalink to this headline">¶</a></h3>
+<p>psyplot automatically detects, whether the variable is unstructured based on the above mentioned <code class="docutils literal notranslate"><span class="pre">bounds</span></code> coordinate. If the length of the second dimension (here <code class="docutils literal notranslate"><span class="pre">vertices</span></code> or <code class="docutils literal notranslate"><span class="pre">no</span></code>) is larger then 2, then it assumes an unstructured variable.</p>
+<p>Alternatively, it assumes that the variable is unstructured if the optional <code class="docutils literal notranslate"><span class="pre">CDI_grid_type</span></code> netCDF attribute or the <code class="docutils literal notranslate"><span class="pre">grid_type</span></code> attribute is equal to <code class="docutils literal notranslate"><span class="pre">'unstructured'</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>ds.t2m.CDI_grid_type
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;unstructured&#39;
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>psy.close(&#39;all&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Acknowledgement">
+<h2>Acknowledgement<a class="headerlink" href="#Acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>Thanks [&#64;Try2Code](<a class="reference external" href="https://github.com/Try2Code">https://github.com/Try2Code</a>) for providing the ICON data and thanks to Stefan Vater and the Research Group for Numerical Methods in Geosciences from the University of Hamburg for providing the Tsunami simulation file.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../regression-analysis/README.html" class="btn btn-neutral float-right" title="Regression Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="example_mapplotters.html" class="btn btn-neutral float-left" title="Basic data visualization on a map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Philipp S. Sommer
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

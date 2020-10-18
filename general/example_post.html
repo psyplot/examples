@@ -1,0 +1,787 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Applying your own post processing &mdash; psyplot-examples version 8517149</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sharing formatoptions" href="example_sharing.html" />
+    <link rel="prev" title="Usage of Climate Data Operators" href="example_cdo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> psyplot-examples
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../regression-analysis/example_densityreg.html">Plot a fit over a density plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../regression-analysis/example_basic_fit.html">Creating and accessing a fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maps/example_ugrid.html">Visualizing unstructured data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maps/example_mapplotters.html">Basic data visualization on a map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maps/example_circumpolar.html">Visualizing circumpolar data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_violin.html">Violin plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_vector.html">Vector plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_plot2d.html">2D plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_line.html">Line plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simple/example_bar.html">Bar plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_sharing.html">Sharing formatoptions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Applying your own post processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Timing">Timing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Saving-and-loading">Saving and loading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_cdo.html">Usage of Climate Data Operators</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">psyplot-examples</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Applying your own post processing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/general/example_post.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="admonition note">
+  This page was generated from
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/8517149/general/example_post.ipynb">general/example_post.ipynb</a>.
+  <br>
+  Interactive online version:
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/8517149?filepath=general/example_post.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <script>
+    if (document.location.host) {
+      $(document.currentScript).replaceWith(
+        '<a class="reference external" ' +
+        'href="https://nbviewer.jupyter.org/url' +
+        (window.location.protocol == 'https:' ? 's/' : '/') +
+        window.location.host +
+        window.location.pathname.slice(0, -4) +
+        'ipynb">View in <em>nbviewer</em></a>.'
+      );
+    }
+  </script>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example requires the <a class="reference download internal" download="" href="../_downloads/7f633640bea5413a226f61fc95701c45/demo.nc"><code class="xref download docutils literal notranslate"><span class="pre">demo.nc</span></code></a> file.</p>
+</div>
+<div class="section" id="Applying-your-own-post-processing">
+<h1>Applying your own post processing<a class="headerlink" href="#Applying-your-own-post-processing" title="Permalink to this headline">¶</a></h1>
+<p>This demo shows you how to use the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption to apply your own post processing scripts.</p>
+<p>It requires the <code class="docutils literal notranslate"><span class="pre">'demo.nc'</span></code> netCDF file, <code class="docutils literal notranslate"><span class="pre">netCDF4</span></code> and the <a class="reference external" href="http://psyplot.readthedocs.io/projects/psy-maps/en/latest/">psy-maps</a> plugin.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>import psyplot.project as psy
+%matplotlib inline
+%config InlineBackend.close_figures = False
+</pre></div>
+</div>
+</div>
+<div class="section" id="Usage">
+<h2>Usage<a class="headerlink" href="#Usage" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption let’s you apply your own script to modify your data. Let’s start with a simple plot of the wind speed:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>sp = psy.plot.mapvector(&#39;demo.nc&#39;, name=[[&#39;u&#39;, &#39;v&#39;]], plot=&#39;stream&#39;,
+                        color=&#39;red&#39;, title=&#39;%b %Y&#39;)
+print(sp)
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+psyplot.project.Project([    arr0: 3-dim DataArray of u, v, with (variable, lat, lon)=(2, 96, 192), lev=100000.0, time=1979-01-31T18:00:00])
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/general_example_post_3_1.png" src="../_images/general_example_post_3_1.png" />
+</div>
+</div>
+<p>It is hard to see the continents below this amount of arrows. So we might want to enhance our plot with cartopy’s <a class="reference external" href="http://scitools.org.uk/cartopy/docs/latest/matplotlib/geoaxes.html?highlight=stock_img#cartopy.mpl.geoaxes.GeoAxes.stock_img">stock_img</a>.</p>
+<p>But since there is now formatoption for it, we can now either define a new plotter and add the formatoption, or we use the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>sp.update(enable_post=True,
+          post=&#39;self.stock_img = self.ax.stock_img()&#39;)
+sp.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/general_example_post_5_0.png" src="../_images/general_example_post_5_0.png" />
+</div>
+</div>
+<p>The first parameter <code class="docutils literal notranslate"><span class="pre">enable_post=True</span></code> sets the <code class="docutils literal notranslate"><span class="pre">enable_post</span></code> attribute of the plotter to <code class="docutils literal notranslate"><span class="pre">True</span></code>. This attribute is by default set to <code class="docutils literal notranslate"><span class="pre">False</span></code> because it is always a security vulnerability to use the built-in <code class="docutils literal notranslate"><span class="pre">exec</span></code> function which is used by the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption. We could, however, already have included this in our first definition of the project via</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">mapvector</span><span class="p">(</span><span class="s1">&#39;demo.nc&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">]],</span> <span class="n">plot</span><span class="o">=</span><span class="s1">&#39;stream&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+                        <span class="n">enable_post</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The second parameter <code class="docutils literal notranslate"><span class="pre">post='self.ax.stock_img()'</span></code> updates the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption. It accepts an executable python script as a string. Note that we make use of the <code class="docutils literal notranslate"><span class="pre">self</span></code> variable, the only variable that is given to the script. It is the <a class="reference external" href="http://psyplot.readthedocs.io/en/latest/api/psyplot.plotter.html#psyplot.plotter.Formatoption">Formatoption</a> instance that performs the update. Hence you can access all the necessary attributes and informations:</p>
+<ul class="simple">
+<li><p>the axes through <code class="docutils literal notranslate"><span class="pre">self.ax</span></code></p></li>
+<li><p>the figure through <code class="docutils literal notranslate"><span class="pre">self.ax.figure</span></code></p></li>
+<li><p>the data that is plotted through <code class="docutils literal notranslate"><span class="pre">self.data</span></code></p></li>
+<li><p>the raw data from the dataset through <code class="docutils literal notranslate"><span class="pre">self.raw_data</span></code></p></li>
+<li><p>the plotter through <code class="docutils literal notranslate"><span class="pre">self.plotter</span></code></p></li>
+<li><p>any other formatoption in the plotter, e.g. the <code class="docutils literal notranslate"><span class="pre">title</span></code> through <code class="docutils literal notranslate"><span class="pre">self.plotter.title</span></code></p></li>
+</ul>
+<p>For example, let’s add another feature that adds the mean of the plotted variables to the plot. For this, let’s first have a look into the <code class="docutils literal notranslate"><span class="pre">plot_data</span></code> attribute of the plotter which includes the data that is visualized and that is accessible through the <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>sp.plotters[0].plot_data
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.DataArray (variable: 2, lat: 96, lon: 192)&gt;
+array([[[-5.548854, -5.470729, ..., -5.680202, -5.618678],
+        [-4.17483 , -4.246608, ..., -3.992702, -4.089869],
+        ...,
+        [-2.664088, -2.547389, ..., -2.911159, -2.785182],
+        [-3.48733 , -3.371119, ..., -3.708034, -3.599635]],
+
+       [[ 2.322004,  2.529036, ...,  1.901594,  2.112532],
+        [ 1.343489,  1.620344, ...,  0.820051,  1.075911],
+        ...,
+        [-2.204363, -2.282   , ..., -2.04323 , -2.125261],
+        [-1.864519, -1.976824, ..., -1.624773, -1.746843]]], dtype=float32)
+Coordinates:
+    lev       float64 1e+05
+  * lat       (lat) float64 88.57 86.72 84.86 83.0 81.13 79.27 77.41 75.54 ...
+  * variable  (variable) &lt;U1 &#39;u&#39; &#39;v&#39;
+  * lon       (lon) float64 0.0 1.875 3.75 5.625 7.5 9.375 11.25 13.12 15.0 ...
+    time      datetime64[ns] 1979-01-31T18:00:00
+Attributes:
+    CDI:          Climate Data Interface version 1.6.8 (http://mpimet.mpg.de/...
+    Conventions:  CF-1.4
+    history:      Mon Aug 17 22:51:40 2015: cdo -r copy test-t2m-u-v.nc test-...
+    title:        Test file
+    CDO:          Climate Data Operators version 1.6.8rc2 (http://mpimet.mpg....
+    long_name:    zonal wind-velocity
+    units:        m/s
+    code:         131
+    table:        128
+    grid_type:    gaussian
+</pre></div></div>
+</div>
+<p>It is a 3-dimensional array, where the first dimension consists of the zonal wind speed <code class="docutils literal notranslate"><span class="pre">'u'</span></code> and the meridional wind speed <code class="docutils literal notranslate"><span class="pre">'v'</span></code>. So let’s add their means as a text to the plot:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>sp.update(post=&quot;&quot;&quot;
+self.stock_img = self.ax.stock_img()
+umean = self.data[0].mean().values
+vmean = self.data[1].mean().values
+abs_mean = ((self.data[0]**2 + self.data[1]**2)**0.5).mean().values
+self.text = self.ax.text(
+    0., -0.15,
+    &#39;u: %1.4f m/s, v: %1.4f m/s, wind speed: %1.4f m/s&#39; % (
+        umean, vmean, abs_mean),
+    transform=self.ax.transAxes)&quot;&quot;&quot;)
+sp.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/general_example_post_10_0.png" src="../_images/general_example_post_10_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Timing">
+<h2>Timing<a class="headerlink" href="#Timing" title="Permalink to this headline">¶</a></h2>
+<p>psyplot is intended to work interactively. By default, the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption is only updated when you personally update it. However, you can modify this timing using the <code class="docutils literal notranslate"><span class="pre">post_timing</span></code> formatoption. It can be either</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'never'</span></code>: The default which requires a manual update</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'replot'</span></code>: To update it when the data changes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'always'</span></code>: To always update it.</p></li>
+</ul>
+<p>For example, in the current setting, when we change the data to the second time step via</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>sp.update(time=1)
+print(sp)
+sp.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+psyplot.project.Project([    arr0: 3-dim DataArray of u, v, with (variable, lat, lon)=(2, 96, 192), lev=100000.0, time=1979-02-28T18:00:00])
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/general_example_post_13_1.png" src="../_images/general_example_post_13_1.png" />
+</div>
+</div>
+<p>Our means are not updated, for this, we have to</p>
+<ol class="arabic simple">
+<li><p>set the <code class="docutils literal notranslate"><span class="pre">post_timing</span></code> to <code class="docutils literal notranslate"><span class="pre">'replot'</span></code></p></li>
+<li><p>slightly modify our <code class="docutils literal notranslate"><span class="pre">post</span></code> script to not plot two texts above each other</p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>sp.update(post_timing=&#39;replot&#39;, post=&quot;&quot;&quot;
+self.stock_img = self.ax.stock_img()
+umean = self.data[0].mean().values
+vmean = self.data[1].mean().values
+abs_mean = ((self.data[0]**2 + self.data[1]**2)**0.5).mean().values
+if hasattr(self, &#39;text&#39;):
+    text = self.text
+else:
+    text = self.ax.text(0., -0.15, &#39;&#39;,
+                        transform=self.ax.transAxes)
+text.set_text(
+    &#39;u: %1.4f m/s, v: %1.4f m/s, wind speed: %1.4f m/s&#39; % (
+        umean, vmean, abs_mean))&quot;&quot;&quot;)
+sp.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/general_example_post_15_0.png" src="../_images/general_example_post_15_0.png" />
+</div>
+</div>
+<p>Now, if we update to the third timestep, our means are also calculated</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>sp.update(time=2)
+sp.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/general_example_post_17_0.png" src="../_images/general_example_post_17_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Saving-and-loading">
+<h1>Saving and loading<a class="headerlink" href="#Saving-and-loading" title="Permalink to this headline">¶</a></h1>
+<p>Saving a project is straight forward via the <code class="docutils literal notranslate"><span class="pre">save_project</span></code> method</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>d = sp.save_project()
+</pre></div>
+</div>
+</div>
+<p>However, when loading the project, the <code class="docutils literal notranslate"><span class="pre">enable_post</span></code> attribute is (for security reasons) again set to <code class="docutils literal notranslate"><span class="pre">False</span></code>. So if you are sure you can trust the post processing scripts in the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption, load your project with <code class="docutils literal notranslate"><span class="pre">enable_post=True</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>psy.close(&#39;all&#39;)
+sp = psy.Project.load_project(d, enable_post=True)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/general_example_post_21_0.png" src="../_images/general_example_post_21_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>psy.close(&#39;all&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="example_sharing.html" class="btn btn-neutral float-right" title="Sharing formatoptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="example_cdo.html" class="btn btn-neutral float-left" title="Usage of Climate Data Operators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Philipp S. Sommer
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

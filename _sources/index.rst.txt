@@ -1,0 +1,24 @@
+
+.. _examples:
+
+.. include:: README.rst
+
+.. toctree::
+  :hidden:
+  :glob:
+
+  README.rst
+  general/*
+  simple/*
+  maps/*
+  regression-analysis/*
+
+.. nbgallery::
+    :name: Example Gallery
+    :glob:
+    :reversed:
+
+    general/example_*
+    simple/example_*
+    maps/example_*
+    regression-analysis/example_*

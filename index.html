@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Psyplot Example Gallery &mdash; psyplot-examples version 8517149</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Psyplot Example Gallery" href="README.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> psyplot-examples
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="regression-analysis/example_densityreg.html">Plot a fit over a density plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression-analysis/example_basic_fit.html">Creating and accessing a fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maps/example_ugrid.html">Visualizing unstructured data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maps/example_mapplotters.html">Basic data visualization on a map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maps/example_circumpolar.html">Visualizing circumpolar data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple/example_violin.html">Violin plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple/example_vector.html">Vector plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple/example_plot2d.html">2D plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple/example_line.html">Line plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simple/example_bar.html">Bar plot demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/example_sharing.html">Sharing formatoptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/example_post.html">Applying your own post processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/example_post.html#Saving-and-loading">Saving and loading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/example_cdo.html">Usage of Climate Data Operators</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">psyplot-examples</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Psyplot Example Gallery</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="psyplot-example-gallery">
+<span id="examples"></span><h1>Psyplot Example Gallery<a class="headerlink" href="#psyplot-example-gallery" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the psyplot example gallery. This collection of notebooks shall
+introduce you to some basic concepts for the visualization with psyplot, and
+demonstrate the skills.</p>
+<p>You can</p>
+<ul class="simple">
+<li><p>run the notebooks on mybinder <a class="reference external" href="https://mybinder.org/v2/gh/psyplot/examples/main"><img alt="mybinder.org" src="https://mybinder.org/badge_logo.svg" /></a></p></li>
+<li><p>test the <a class="reference external" href="psyplot.readthedocs.io/projects/psyplot-gui">psyplot GUI</a> and <a class="reference external" href="https://psyplot.readthedocs.io/projects/psy-view">psy-view</a> in your browser <a class="reference external" href="https://mybinder.org/v2/gh/psyplot/examples/main?urlpath=%2Fdesktop"><img alt="mybinder.org" src="https://mybinder.org/badge_logo.svg" /></a></p></li>
+<li><p>have a look at the rendered gallery <a class="reference external" href="https://psyplot.github.io/examples"><img alt="GitHub deployments" src="https://img.shields.io/github/deployments/psyplot/examples/github-pages" /></a></p></li>
+<li><p>access the source code of this repository on github <a class="reference external" href="https://github.com/psyplot/examples"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/psyplot/examples" /></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound" id="example-gallery">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Make a fit to your data and show the source as density plot">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/regression-analysis_example_densityreg_9_1.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="regression-analysis/example_densityreg.html">
+          <span class="std std-ref">Plot a fit over a density plot</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Make a linear regression to your data.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/regression-analysis_example_basic_fit_15_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="regression-analysis/example_basic_fit.html">
+          <span class="std std-ref">Creating and accessing a fit</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Visualize unstructured grids like the ICON model or UGRID conventions.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/maps_example_ugrid_7_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="maps/example_ugrid.html">
+          <span class="std std-ref">Visualizing unstructured data</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Visualize data on a map in multiple formats and projections.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/maps_example_mapplotters_30_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="maps/example_mapplotters.html">
+          <span class="std std-ref">Basic data visualization on a map</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Visualize data with 2D-coordinates.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/maps_example_circumpolar_7_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="maps/example_circumpolar.html">
+          <span class="std std-ref">Visualizing circumpolar data</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Make violin plots using seaborn.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/simple_example_violin_2_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="simple/example_violin.html">
+          <span class="std std-ref">Violin plot demo</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Visualize 2D vector data, as quiver or streamplot.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/simple_example_vector_8_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="simple/example_vector.html">
+          <span class="std std-ref">Vector plot</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Visualize simple 2D scalar fields">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/simple_example_plot2d_5_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="simple/example_plot2d.html">
+          <span class="std std-ref">2D plots</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Flexibly create lineplots (incl. uncertainty intervals) with the psy.plot.lineplot method.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/simple_example_line_11_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="simple/example_line.html">
+          <span class="std std-ref">Line plot demo</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Create barplots with the psy.plot.barplot plotmethod.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/simple_example_bar_6_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="simple/example_bar.html">
+          <span class="std std-ref">Bar plot demo</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Share formatoptions between multiple plots.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/general_example_sharing_12_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="general/example_sharing.html">
+          <span class="std std-ref">Sharing formatoptions</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Use the post formatoption to extent the plot with your own script.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/general_example_post_21_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="general/example_post.html">
+          <span class="std std-ref">Applying your own post processing</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Use CDOs together with psyplot.">
+  <div class="figure align-center">
+    <img alt="thumbnail" src="./_images/general_example_cdo_3_0.png" />
+    <p class="caption">
+      <span class="caption-text">
+        <a class="reference internal" href="general/example_cdo.html">
+          <span class="std std-ref">Usage of Climate Data Operators</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+<div class="sphx-glr-clear"></div></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="README.html" class="btn btn-neutral float-right" title="Psyplot Example Gallery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Philipp S. Sommer
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
