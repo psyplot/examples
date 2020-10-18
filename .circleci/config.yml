@@ -32,7 +32,7 @@ commands:
           command: |
             which conda || source $HOME/miniconda3/bin/activate base
             conda activate docs
-            sphinx-build . _build/html
+            sphinx-build . _build/html -D nbsphinx_execute=always
       - persist_to_workspace:
           root: _build
           paths: html
