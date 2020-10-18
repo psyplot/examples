@@ -13,6 +13,8 @@ You can
 - have a look at the rendered gallery |pages|
 - access the source code of this repository on github |github|
 
+These examples are automatically tested and deployed using CircleCI |circleci|
+
 .. _psyplot GUI: psyplot.readthedocs.io/projects/psyplot-gui
 .. _psy-view: https://psyplot.readthedocs.io/projects/psy-view
 
@@ -32,3 +34,7 @@ You can
 .. |github| image:: https://img.shields.io/github/last-commit/psyplot/examples
     :alt: GitHub last commit
     :target: https://github.com/psyplot/examples
+
+.. |circleci| image:: https://img.shields.io/circleci/build/github/psyplot/examples/main
+    :alt: CircleCI
+    :target: https://app.circleci.com/pipelines/github/psyplot/examples
