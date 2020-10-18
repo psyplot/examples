@@ -9,8 +9,6 @@ dependencies:
 - pip
 - ncview
 - python-cdo
-
-# required for nbsphinx
 - ipython
 
 # Required for jupyter-desktop-server
