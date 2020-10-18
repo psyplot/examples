@@ -169,13 +169,13 @@ if not osp.exists("index.rst"):
     f.write("""
 .. _examples:
 
-Psyplot Example Gallery
-=======================
+.. include:: README.rst
 
 .. toctree::
   :hidden:
   :glob:
 
+  README.rst
   general/*
   simple/*
   maps/*
