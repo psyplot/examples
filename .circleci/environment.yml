@@ -6,6 +6,8 @@ dependencies:
 - psy-maps
 - psy-reg
 - netcdf4
+- python-cdo
 - nbsphinx
 - sphinx-gallery
 - sphinx_rtd_theme
+- ipython
