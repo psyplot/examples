@@ -57,7 +57,11 @@ jobs:
           at: _build
       - run:
           name: Disable jekyll builds
-          command: touch _build/html/.nojekyll
+          command: |
+            touch _build/html/.nojekyll
+            # create empty CircleCI config
+            mkdir _build/html/.circleci
+            touch _build/html/.circleci/config.yml
       - run:
           name: Install and configure dependencies
           command: |
@@ -69,7 +73,7 @@ jobs:
             - "5c:77:3f:6a:68:f3:89:64:f1:ae:a2:31:2f:96:be:bf"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "CircleCi Build ${CIRCLE_BUILD_NUM}, commit ${CIRCLE_SHA1} [skip ci]" --dist _build/html
+          command: gh-pages --dotfiles --message "[skip ci] CircleCi Build ${CIRCLE_BUILD_NUM}, commit ${CIRCLE_SHA1}" --dist _build/html
 
 workflows:
   version: 2.1
