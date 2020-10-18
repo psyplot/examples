@@ -24,7 +24,9 @@ commands:
     steps:
       - run:
           name: Install the conda environment
-          command: conda env create -f .circleci/environment.yml -n docs
+          command: |
+            which conda || source $HOME/miniconda3/bin/activate base
+            conda env create -f .circleci/environment.yml -n docs
       - run:
           name: Build the docs
           command: |
