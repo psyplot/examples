@@ -36,7 +36,7 @@ commands:
 
 jobs:
   build_docs:
-    working_directory: ~/test
+    working_directory: ~/repo
     machine: true
     steps:
       - install_conda
