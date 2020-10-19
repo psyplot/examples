@@ -59,9 +59,12 @@ jobs:
           name: Disable jekyll builds
           command: |
             touch _build/html/.nojekyll
-            # create empty CircleCI config
+      - run:
+          name: Create dummy CircleCI config
+          command: |
             mkdir _build/html/.circleci
-            touch _build/html/.circleci/config.yml
+            cp .circleci/gh-pages_config.yml _build/html/.circleci/config.yml
+
       - run:
           name: Install and configure dependencies
           command: |
