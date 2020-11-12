@@ -16,3 +16,5 @@ done
 pip install --no-deps $PACKAGES
 
 rm -rf .psyplot-packages
+
+exec "$@"
