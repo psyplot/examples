@@ -1,9 +1,18 @@
+#!/bin/bash
 # always install the latest version from github
+
+set -e
 
 PACKAGES=""
 
+mkdir .psyplot-packages
+
 for PKG in psyplot psy-simple psy-maps psy-reg psyplot-gui psy-view; do
-    PACKAGES="${PACKAGES} git+https://github.com/psyplot/${PKG}.git"
+    git clone https://github.com/psyplot/${PKG}.git .psyplot-packages/${PKG}
+
+    PACKAGES="${PACKAGES} .psyplot-packages/${PKG}/"
 done
 
-pip install $PACKAGES
+pip install --no-deps $PACKAGES
+
+rm -rf .psyplot-packages
