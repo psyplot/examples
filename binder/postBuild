@@ -12,7 +12,7 @@ Version=1.0
 Type=Application
 Name=Psy-View
 Exec=$(which psy-view) %f
-Icon=$HOME/icon/psy-view.svg
+Icon=$HOME/binder/psy-view.svg
 Path=$HOME/Desktop
 MimeType=application/x-netcdf;
 EOF
@@ -23,7 +23,7 @@ Version=1.0
 Type=Application
 Name=Psyplot
 Exec=$(which psyplot) %f
-Icon=$HOME/icon/psyplot.svg
+Icon=$HOME/binder/psyplot.svg
 Path=$HOME/Desktop
 MimeType=application/x-netcdf;
 EOF
