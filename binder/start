@@ -7,7 +7,7 @@ PACKAGES=""
 
 mkdir .psyplot-packages
 
-for PKG in psyplot psy-simple psy-maps psy-reg psyplot-gui psy-view; do
+for PKG in psyplot psy-simple psy-maps psy-reg psyplot-gui psy-view psy-transect; do
     git clone https://github.com/psyplot/${PKG}.git .psyplot-packages/${PKG}
 
     PACKAGES="${PACKAGES} .psyplot-packages/${PKG}/"

@@ -12,6 +12,8 @@ dependencies:
 - seaborn
 - matplotlib>=3.3
 - cartopy>=0.18
+- pyinterp
+- scikit-learn
 
 # Required for jupyter-desktop-server
 - websockify
