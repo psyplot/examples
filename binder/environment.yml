@@ -3,6 +3,7 @@ channels:
 - psyplot
 - manics # Used by jupyter-desktop-server
 - conda-forge
+- nodefaults
 dependencies:
 - psy-view
 - psy-reg
