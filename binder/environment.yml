@@ -20,3 +20,5 @@ dependencies:
 - websockify
 - pip:
     - jupyter-desktop-server
+    - sphinx_rtd_theme
+    - git+https://github.com/psyplot/psy-transect
