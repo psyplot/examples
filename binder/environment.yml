@@ -15,6 +15,7 @@ dependencies:
 - cartopy>=0.18
 - pyinterp
 - scikit-learn
+- ipympl
 
 # Required for jupyter-desktop-server
 - websockify
