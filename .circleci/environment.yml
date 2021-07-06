@@ -17,3 +17,6 @@ dependencies:
 - pyinterp
 - scikit-learn
 - ipympl
+- pip
+- pip:
+  - git+https://github.com/psyplot/psy-transect.git
