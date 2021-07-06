@@ -3,21 +3,26 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Creating and accessing a fit &mdash; psyplot-examples version ca10a31</title>
+  <title>Creating and accessing a fit &mdash; psyplot-examples version e2bc277</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
 
   
   
+
   
+  
+
   
 
   
@@ -27,11 +32,13 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -53,7 +60,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> psyplot-examples
+            <a href="../index.html" class="icon icon-home"> psyplot-examples
           
 
           
@@ -138,6 +145,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -149,7 +158,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/regression-analysis/example_basic_fit.ipynb.txt" rel="nofollow"> View page source</a>
           
         
@@ -168,21 +177,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -283,7 +306,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -349,6 +372,7 @@ div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
     padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -420,10 +444,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/ca10a31/regression-analysis/example_basic_fit.ipynb">regression-analysis/example_basic_fit.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/e2bc277/regression-analysis/example_basic_fit.ipynb">regression-analysis/example_basic_fit.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/ca10a31?filepath=regression-analysis/example_basic_fit.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/e2bc277?filepath=regression-analysis/example_basic_fit.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -789,7 +813,8 @@ dl.xr-attrs {
   grid-template-columns: 125px auto;
 }
 
-.xr-attrs dt, dd {
+.xr-attrs dt,
+.xr-attrs dd {
   padding: 0;
   margin: 0;
   float: left;
@@ -829,7 +854,7 @@ Dimensions:  (experiment: 50)
 Dimensions without coordinates: experiment
 Data variables:
     x        (experiment) float64 0.0 2.041 4.082 6.122 ... 95.92 97.96 100.0
-    y        (experiment) float64 49.88 66.07 22.3 39.93 ... 501.8 411.0 402.1</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-8a8b3b4b-af79-43bd-a6e3-8f5fe853d2fb' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8a8b3b4b-af79-43bd-a6e3-8f5fe853d2fb' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>experiment</span>: 50</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-2f1cf36c-9e28-47a1-8a1c-1b8a6c389e7e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2f1cf36c-9e28-47a1-8a1c-1b8a6c389e7e' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-554aa454-ce3f-4b0a-beaa-1118ee22e432' class='xr-section-summary-in' type='checkbox'  checked><label for='section-554aa454-ce3f-4b0a-beaa-1118ee22e432' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>x</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.041 4.082 ... 97.96 100.0</div><input id='attrs-f7648a23-1203-4d0d-9731-559ec39798e7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f7648a23-1203-4d0d-9731-559ec39798e7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-10ef6fc4-52b1-4130-b42d-05188e6c8744' class='xr-var-data-in' type='checkbox'><label for='data-10ef6fc4-52b1-4130-b42d-05188e6c8744' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  0.        ,   2.04081633,   4.08163265,   6.12244898,
+    y        (experiment) float64 -52.32 55.16 84.47 61.12 ... 467.4 340.0 429.7</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-6481d620-59e6-401b-9479-690998ac7ea5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6481d620-59e6-401b-9479-690998ac7ea5' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>experiment</span>: 50</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-d987f108-e83b-4498-97d6-39ee1919298b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d987f108-e83b-4498-97d6-39ee1919298b' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-63b35ef7-336f-49e4-b80b-a39f7a33c30e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-63b35ef7-336f-49e4-b80b-a39f7a33c30e' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>x</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.041 4.082 ... 97.96 100.0</div><input id='attrs-e7e8362f-fc24-473e-a2ea-3773c2f9ef50' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e7e8362f-fc24-473e-a2ea-3773c2f9ef50' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5dff7d0c-efea-4cec-be2d-faf2c38d15d6' class='xr-var-data-in' type='checkbox'><label for='data-5dff7d0c-efea-4cec-be2d-faf2c38d15d6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  0.        ,   2.04081633,   4.08163265,   6.12244898,
          8.16326531,  10.20408163,  12.24489796,  14.28571429,
         16.32653061,  18.36734694,  20.40816327,  22.44897959,
         24.48979592,  26.53061224,  28.57142857,  30.6122449 ,
@@ -841,19 +866,19 @@ Data variables:
         73.46938776,  75.51020408,  77.55102041,  79.59183673,
         81.63265306,  83.67346939,  85.71428571,  87.75510204,
         89.79591837,  91.83673469,  93.87755102,  95.91836735,
-        97.95918367, 100.        ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>y</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>49.88 66.07 22.3 ... 411.0 402.1</div><input id='attrs-3ed41fe2-031a-4271-845d-dd95957e8972' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3ed41fe2-031a-4271-845d-dd95957e8972' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5ea0af92-22fa-4291-95c5-259896778f43' class='xr-var-data-in' type='checkbox'><label for='data-5ea0af92-22fa-4291-95c5-259896778f43' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 49.8786212 ,  66.07286874,  22.30185662,  39.92601633,
-        67.45743359,  37.23216259, 137.20803961, 110.54589402,
-       163.52197649, 152.86356865, -28.5447481 , 199.66368725,
-        70.64609399, 102.16613068, 129.42756404, 163.04750629,
-       172.95619836, 122.13295119,  87.14252355, 206.96968461,
-       255.25509513, 174.58034988, 264.12684012, 188.86602363,
-       244.57406742, 307.83359405, 239.96934623, 261.69795666,
-       241.4068084 , 227.62146657, 200.90473641, 288.0262674 ,
-       300.69119067, 362.31077165, 289.06921056, 335.92476946,
-       358.46110244, 376.48465763, 314.90495687, 381.83312876,
-       305.72872963, 320.68811326, 429.80014925, 456.44650466,
-       389.28708183, 331.06833864, 365.74985934, 501.81728976,
-       410.96261633, 402.0859006 ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-36127127-549c-4a99-8825-94637bc31a1f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-36127127-549c-4a99-8825-94637bc31a1f' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div>
+        97.95918367, 100.        ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>y</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-52.32 55.16 84.47 ... 340.0 429.7</div><input id='attrs-35a2f8f0-024a-41df-905b-ea084170e8a8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-35a2f8f0-024a-41df-905b-ea084170e8a8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-57a36490-964a-46f0-91ed-72f26a2571e6' class='xr-var-data-in' type='checkbox'><label for='data-57a36490-964a-46f0-91ed-72f26a2571e6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-52.31787347,  55.15730867,  84.46566889,  61.12443169,
+        98.90567881,  34.04609392, 133.56999746,  61.08254112,
+        48.59300192, 131.43655395,  41.81756853, 160.10924647,
+       111.01951796, 112.95589545, 166.53849813, 136.03418371,
+       184.68691613, 169.23918351, 183.71998731, 188.37596433,
+       201.8961056 , 195.07325896, 323.36353779, 223.31527753,
+       287.31228111, 253.623567  , 352.1856166 , 245.67769801,
+       262.92101834, 250.70282893, 195.39074201, 306.20267554,
+       364.95024195, 318.18933113, 278.0708173 , 305.89304892,
+       346.4501462 , 380.18080089, 328.53031326, 325.38803538,
+       332.70425401, 352.49766767, 419.14341133, 437.98782849,
+       511.47569873, 417.07588854, 433.76348988, 467.44789192,
+       340.04404086, 429.70108961])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2bc26bf8-9117-4d48-a5bc-14daff5736b5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2bc26bf8-9117-4d48-a5bc-14daff5736b5' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div>
 </div>
 <p>We can show this input data using the <code class="docutils literal notranslate"><span class="pre">lineplot</span></code> plot method from the psy-simple plugin:</p>
 <div class="nbinput docutils container">
@@ -1235,7 +1260,8 @@ dl.xr-attrs {
   grid-template-columns: 125px auto;
 }
 
-.xr-attrs dt, dd {
+.xr-attrs dt,
+.xr-attrs dd {
   padding: 0;
   margin: 0;
   float: left;
@@ -1271,94 +1297,94 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;y&#x27; (variable: 3, x: 100)&gt;
-array([[ 31.24460468,  35.30058962,  39.35657455,  43.41255949,
-         47.46854443,  51.52452937,  55.5805143 ,  59.63649924,
-         63.69248418,  67.74846911,  71.80445405,  75.86043899,
-         79.91642392,  83.97240886,  88.0283938 ,  92.08437873,
-         96.14036367, 100.19634861, 104.25233355, 108.30831848,
-        112.36430342, 116.42028836, 120.47627329, 124.53225823,
-        128.58824317, 132.6442281 , 136.70021304, 140.75619798,
-        144.81218291, 148.86816785, 152.92415279, 156.98013773,
-        161.03612266, 165.0921076 , 169.14809254, 173.20407747,
-        177.26006241, 181.31604735, 185.37203228, 189.42801722,
-        193.48400216, 197.5399871 , 201.59597203, 205.65195697,
-        209.70794191, 213.76392684, 217.81991178, 221.87589672,
-        225.93188165, 229.98786659, 234.04385153, 238.09983646,
-        242.1558214 , 246.21180634, 250.26779128, 254.32377621,
-        258.37976115, 262.43574609, 266.49173102, 270.54771596,
-        274.6037009 , 278.65968583, 282.71567077, 286.77165571,
-        290.82764064, 294.88362558, 298.93961052, 302.99559546,
-        307.05158039, 311.10756533, 315.16355027, 319.2195352 ,
-        323.27552014, 327.33150508, 331.38749001, 335.44347495,
-        339.49945989, 343.55544482, 347.61142976, 351.6674147 ,
+array([[ 27.90314718,  32.18701045,  36.47087373,  40.75473701,
+         45.03860028,  49.32246356,  53.60632683,  57.89019011,
+         62.17405339,  66.45791666,  70.74177994,  75.02564322,
+         79.30950649,  83.59336977,  87.87723305,  92.16109632,
+         96.4449596 , 100.72882288, 105.01268615, 109.29654943,
+        113.5804127 , 117.86427598, 122.14813926, 126.43200253,
+        130.71586581, 134.99972909, 139.28359236, 143.56745564,
+        147.85131892, 152.13518219, 156.41904547, 160.70290875,
+        164.98677202, 169.2706353 , 173.55449857, 177.83836185,
+        182.12222513, 186.4060884 , 190.68995168, 194.97381496,
+        199.25767823, 203.54154151, 207.82540479, 212.10926806,
+        216.39313134, 220.67699462, 224.96085789, 229.24472117,
+        233.52858444, 237.81244772, 242.096311  , 246.38017427,
+        250.66403755, 254.94790083, 259.2317641 , 263.51562738,
+        267.79949066, 272.08335393, 276.36721721, 280.65108049,
+        284.93494376, 289.21880704, 293.50267031, 297.78653359,
+        302.07039687, 306.35426014, 310.63812342, 314.9219867 ,
+        319.20584997, 323.48971325, 327.77357653, 332.0574398 ,
+        336.34130308, 340.62516635, 344.90902963, 349.19289291,
+        353.47675618, 357.76061946, 362.04448274, 366.32834601,
 ...
-        131.57787918, 135.37830257, 139.11213874, 142.92114563,
-        146.6798942 , 150.43402813, 154.18381465, 157.95947236,
-        161.71972768, 165.48513494, 169.36855841, 173.42219143,
-        177.15047111, 180.95464796, 184.83027334, 188.36281794,
-        192.26168761, 196.27368097, 200.14856331, 203.86356548,
-        207.70736281, 211.59347201, 215.49894288, 219.36312287,
-        223.25162746, 227.39407989, 231.35980643, 235.33156694,
-        239.42239713, 243.40936628, 247.47548641, 251.5498124 ,
-        255.69262559, 259.69562168, 263.68937229, 267.80751438,
-        271.84214294, 275.96213039, 280.15285348, 284.40710749,
-        288.54464126, 292.68411653, 296.90363168, 301.20097415,
-        305.88211214, 310.28786765, 314.47559158, 318.82724893,
-        323.01043211, 327.3874299 , 331.43930481, 335.6886745 ,
-        340.34014203, 344.84010944, 349.17931279, 353.49294221,
-        357.89091981, 362.4164757 , 366.5851128 , 371.02475649,
-        375.23188524, 379.42617673, 383.61652344, 387.80636648,
-        392.07873682, 396.25592454, 400.43163789, 404.65282071,
-        409.20256681, 413.66517826, 417.91172608, 422.36779671,
-        426.82386734, 431.27966237, 435.73415635, 440.34798053,
-        444.97384411, 449.59970768, 454.0691604 , 458.50780303]])
+        129.72721467, 133.84720095, 137.73658618, 141.68249204,
+        145.64420446, 149.65692691, 153.60385461, 157.65328793,
+        161.70956919, 165.69673705, 169.66144898, 173.8787118 ,
+        177.9501503 , 182.28651947, 186.55844682, 190.78256455,
+        195.0986586 , 199.37156346, 203.64335672, 207.66935275,
+        211.91695687, 215.81492852, 220.0512658 , 224.2819309 ,
+        228.51259599, 232.56301323, 236.60734265, 241.18240886,
+        245.46353685, 249.77078505, 254.04823332, 258.66116491,
+        262.90474153, 267.40987574, 271.78915508, 276.16953747,
+        280.62213652, 284.89975582, 289.44552404, 293.98565949,
+        298.44313845, 303.05627728, 307.52269455, 312.24197767,
+        316.9035079 , 321.40159613, 325.82407184, 330.48292061,
+        335.10164494, 339.60811958, 344.12349164, 348.6653936 ,
+        353.43908231, 357.7108005 , 362.23298283, 366.82842461,
+        371.53190313, 376.29972457, 381.0129821 , 385.63979139,
+        390.33929942, 395.03880745, 399.73831548, 404.43782351,
+        409.13733153, 413.83683956, 418.53634759, 423.23585562,
+        427.9113592 , 432.55168551, 437.16097068, 441.75579314,
+        446.38843775, 451.11934352, 455.89001417, 460.51210507,
+        465.38681921, 470.03967469, 474.61521448, 479.19075427]])
 Coordinates:
   * x         (x) float64 0.0 1.01 2.02 3.03 4.04 ... 96.97 97.98 98.99 100.0
   * variable  (variable) &lt;U7 &#x27;y&#x27; &#x27;min_err&#x27; &#x27;max_err&#x27;
 Attributes:
-    slope:      4.015425087573185
-    intercept:  31.24460468035856
-    rsquared:   0.8587245496564277</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'y'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>variable</span>: 3</li><li><span class='xr-has-index'>x</span>: 100</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-fb1156d9-c909-4d8f-87cb-bbb954d24aca' class='xr-array-in' type='checkbox' checked><label for='section-fb1156d9-c909-4d8f-87cb-bbb954d24aca' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>31.24 35.3 39.36 43.41 47.47 51.52 ... 440.3 445.0 449.6 454.1 458.5</span></div><div class='xr-array-data'><pre>array([[ 31.24460468,  35.30058962,  39.35657455,  43.41255949,
-         47.46854443,  51.52452937,  55.5805143 ,  59.63649924,
-         63.69248418,  67.74846911,  71.80445405,  75.86043899,
-         79.91642392,  83.97240886,  88.0283938 ,  92.08437873,
-         96.14036367, 100.19634861, 104.25233355, 108.30831848,
-        112.36430342, 116.42028836, 120.47627329, 124.53225823,
-        128.58824317, 132.6442281 , 136.70021304, 140.75619798,
-        144.81218291, 148.86816785, 152.92415279, 156.98013773,
-        161.03612266, 165.0921076 , 169.14809254, 173.20407747,
-        177.26006241, 181.31604735, 185.37203228, 189.42801722,
-        193.48400216, 197.5399871 , 201.59597203, 205.65195697,
-        209.70794191, 213.76392684, 217.81991178, 221.87589672,
-        225.93188165, 229.98786659, 234.04385153, 238.09983646,
-        242.1558214 , 246.21180634, 250.26779128, 254.32377621,
-        258.37976115, 262.43574609, 266.49173102, 270.54771596,
-        274.6037009 , 278.65968583, 282.71567077, 286.77165571,
-        290.82764064, 294.88362558, 298.93961052, 302.99559546,
-        307.05158039, 311.10756533, 315.16355027, 319.2195352 ,
-        323.27552014, 327.33150508, 331.38749001, 335.44347495,
-        339.49945989, 343.55544482, 347.61142976, 351.6674147 ,
+    slope:      4.241024643654057
+    intercept:  27.90314717634283
+    rsquared:   0.8887275956056283</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'y'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>variable</span>: 3</li><li><span class='xr-has-index'>x</span>: 100</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-cb7141db-8178-45bc-a2fb-07cfdfcde14a' class='xr-array-in' type='checkbox' checked><label for='section-cb7141db-8178-45bc-a2fb-07cfdfcde14a' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>27.9 32.19 36.47 40.75 45.04 49.32 ... 460.5 465.4 470.0 474.6 479.2</span></div><div class='xr-array-data'><pre>array([[ 27.90314718,  32.18701045,  36.47087373,  40.75473701,
+         45.03860028,  49.32246356,  53.60632683,  57.89019011,
+         62.17405339,  66.45791666,  70.74177994,  75.02564322,
+         79.30950649,  83.59336977,  87.87723305,  92.16109632,
+         96.4449596 , 100.72882288, 105.01268615, 109.29654943,
+        113.5804127 , 117.86427598, 122.14813926, 126.43200253,
+        130.71586581, 134.99972909, 139.28359236, 143.56745564,
+        147.85131892, 152.13518219, 156.41904547, 160.70290875,
+        164.98677202, 169.2706353 , 173.55449857, 177.83836185,
+        182.12222513, 186.4060884 , 190.68995168, 194.97381496,
+        199.25767823, 203.54154151, 207.82540479, 212.10926806,
+        216.39313134, 220.67699462, 224.96085789, 229.24472117,
+        233.52858444, 237.81244772, 242.096311  , 246.38017427,
+        250.66403755, 254.94790083, 259.2317641 , 263.51562738,
+        267.79949066, 272.08335393, 276.36721721, 280.65108049,
+        284.93494376, 289.21880704, 293.50267031, 297.78653359,
+        302.07039687, 306.35426014, 310.63812342, 314.9219867 ,
+        319.20584997, 323.48971325, 327.77357653, 332.0574398 ,
+        336.34130308, 340.62516635, 344.90902963, 349.19289291,
+        353.47675618, 357.76061946, 362.04448274, 366.32834601,
 ...
-        131.57787918, 135.37830257, 139.11213874, 142.92114563,
-        146.6798942 , 150.43402813, 154.18381465, 157.95947236,
-        161.71972768, 165.48513494, 169.36855841, 173.42219143,
-        177.15047111, 180.95464796, 184.83027334, 188.36281794,
-        192.26168761, 196.27368097, 200.14856331, 203.86356548,
-        207.70736281, 211.59347201, 215.49894288, 219.36312287,
-        223.25162746, 227.39407989, 231.35980643, 235.33156694,
-        239.42239713, 243.40936628, 247.47548641, 251.5498124 ,
-        255.69262559, 259.69562168, 263.68937229, 267.80751438,
-        271.84214294, 275.96213039, 280.15285348, 284.40710749,
-        288.54464126, 292.68411653, 296.90363168, 301.20097415,
-        305.88211214, 310.28786765, 314.47559158, 318.82724893,
-        323.01043211, 327.3874299 , 331.43930481, 335.6886745 ,
-        340.34014203, 344.84010944, 349.17931279, 353.49294221,
-        357.89091981, 362.4164757 , 366.5851128 , 371.02475649,
-        375.23188524, 379.42617673, 383.61652344, 387.80636648,
-        392.07873682, 396.25592454, 400.43163789, 404.65282071,
-        409.20256681, 413.66517826, 417.91172608, 422.36779671,
-        426.82386734, 431.27966237, 435.73415635, 440.34798053,
-        444.97384411, 449.59970768, 454.0691604 , 458.50780303]])</pre></div></div></li><li class='xr-section-item'><input id='section-177447a3-2762-4526-ba11-8be6d8d406d0' class='xr-section-summary-in' type='checkbox'  checked><label for='section-177447a3-2762-4526-ba11-8be6d8d406d0' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 1.01 2.02 ... 97.98 98.99 100.0</div><input id='attrs-94f1ceb3-6595-4193-b69e-23fd70aae35c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-94f1ceb3-6595-4193-b69e-23fd70aae35c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1bf1862a-eb3b-4223-a7f5-52df5595fcd5' class='xr-var-data-in' type='checkbox'><label for='data-1bf1862a-eb3b-4223-a7f5-52df5595fcd5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  0.      ,   1.010101,   2.020202,   3.030303,   4.040404,   5.050505,
+        129.72721467, 133.84720095, 137.73658618, 141.68249204,
+        145.64420446, 149.65692691, 153.60385461, 157.65328793,
+        161.70956919, 165.69673705, 169.66144898, 173.8787118 ,
+        177.9501503 , 182.28651947, 186.55844682, 190.78256455,
+        195.0986586 , 199.37156346, 203.64335672, 207.66935275,
+        211.91695687, 215.81492852, 220.0512658 , 224.2819309 ,
+        228.51259599, 232.56301323, 236.60734265, 241.18240886,
+        245.46353685, 249.77078505, 254.04823332, 258.66116491,
+        262.90474153, 267.40987574, 271.78915508, 276.16953747,
+        280.62213652, 284.89975582, 289.44552404, 293.98565949,
+        298.44313845, 303.05627728, 307.52269455, 312.24197767,
+        316.9035079 , 321.40159613, 325.82407184, 330.48292061,
+        335.10164494, 339.60811958, 344.12349164, 348.6653936 ,
+        353.43908231, 357.7108005 , 362.23298283, 366.82842461,
+        371.53190313, 376.29972457, 381.0129821 , 385.63979139,
+        390.33929942, 395.03880745, 399.73831548, 404.43782351,
+        409.13733153, 413.83683956, 418.53634759, 423.23585562,
+        427.9113592 , 432.55168551, 437.16097068, 441.75579314,
+        446.38843775, 451.11934352, 455.89001417, 460.51210507,
+        465.38681921, 470.03967469, 474.61521448, 479.19075427]])</pre></div></div></li><li class='xr-section-item'><input id='section-553c32b4-6c84-4ea4-b03e-12832b689778' class='xr-section-summary-in' type='checkbox'  checked><label for='section-553c32b4-6c84-4ea4-b03e-12832b689778' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 1.01 2.02 ... 97.98 98.99 100.0</div><input id='attrs-30a794ad-6ba8-48a1-beb7-0099744fa51e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-30a794ad-6ba8-48a1-beb7-0099744fa51e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-33ab6571-5aa3-4c34-9ab7-25e667e05a88' class='xr-var-data-in' type='checkbox'><label for='data-33ab6571-5aa3-4c34-9ab7-25e667e05a88' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  0.      ,   1.010101,   2.020202,   3.030303,   4.040404,   5.050505,
          6.060606,   7.070707,   8.080808,   9.090909,  10.10101 ,  11.111111,
         12.121212,  13.131313,  14.141414,  15.151515,  16.161616,  17.171717,
         18.181818,  19.191919,  20.20202 ,  21.212121,  22.222222,  23.232323,
@@ -1374,7 +1400,7 @@ Attributes:
         78.787879,  79.79798 ,  80.808081,  81.818182,  82.828283,  83.838384,
         84.848485,  85.858586,  86.868687,  87.878788,  88.888889,  89.89899 ,
         90.909091,  91.919192,  92.929293,  93.939394,  94.949495,  95.959596,
-        96.969697,  97.979798,  98.989899, 100.      ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>variable</span></div><div class='xr-var-dims'>(variable)</div><div class='xr-var-dtype'>&lt;U7</div><div class='xr-var-preview xr-preview'>&#x27;y&#x27; &#x27;min_err&#x27; &#x27;max_err&#x27;</div><input id='attrs-a4b1c152-bb95-460c-a7b9-2a9157e077f3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a4b1c152-bb95-460c-a7b9-2a9157e077f3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-af218918-c94a-4015-9945-b6a18b5516c3' class='xr-var-data-in' type='checkbox'><label for='data-af218918-c94a-4015-9945-b6a18b5516c3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;y&#x27;, &#x27;min_err&#x27;, &#x27;max_err&#x27;], dtype=&#x27;&lt;U7&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-224fb4a0-3f7d-4cce-9a9c-9c4d308da96f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-224fb4a0-3f7d-4cce-9a9c-9c4d308da96f' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>slope :</span></dt><dd>4.015425087573185</dd><dt><span>intercept :</span></dt><dd>31.24460468035856</dd><dt><span>rsquared :</span></dt><dd>0.8587245496564277</dd></dl></div></li></ul></div></div></div>
+        96.969697,  97.979798,  98.989899, 100.      ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>variable</span></div><div class='xr-var-dims'>(variable)</div><div class='xr-var-dtype'>&lt;U7</div><div class='xr-var-preview xr-preview'>&#x27;y&#x27; &#x27;min_err&#x27; &#x27;max_err&#x27;</div><input id='attrs-737a6083-ac02-438d-a019-0767555f73e0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-737a6083-ac02-438d-a019-0767555f73e0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5c617376-7dd7-4c89-938e-de96d01dbfbf' class='xr-var-data-in' type='checkbox'><label for='data-5c617376-7dd7-4c89-938e-de96d01dbfbf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;y&#x27;, &#x27;min_err&#x27;, &#x27;max_err&#x27;], dtype=&#x27;&lt;U7&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-690186fe-934c-481f-8eb4-5e3bf80073e2' class='xr-section-summary-in' type='checkbox'  checked><label for='section-690186fe-934c-481f-8eb4-5e3bf80073e2' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>slope :</span></dt><dd>4.241024643654057</dd><dt><span>intercept :</span></dt><dd>27.90314717634283</dd><dt><span>rsquared :</span></dt><dd>0.8887275956056283</dd></dl></div></li></ul></div></div></div>
 </div>
 <p>You see, that there are new attributes, <code class="docutils literal notranslate"><span class="pre">rsquared</span></code>, <code class="docutils literal notranslate"><span class="pre">intercept</span></code> and <code class="docutils literal notranslate"><span class="pre">slope</span></code>, the characteristics of the fit. As always with the dataset attributes in <code class="docutils literal notranslate"><span class="pre">psyplot</span></code>, you can visualize them, for example in the legend:</p>
 <div class="nbinput docutils container">
@@ -1481,37 +1507,29 @@ ideal
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="example_densityreg.html" class="btn btn-neutral float-right" title="Plot a fit over a density plot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="README.html" class="btn btn-neutral float-left" title="Regression Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="example_densityreg.html" class="btn btn-neutral float-right" title="Plot a fit over a density plot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="README.html" class="btn btn-neutral float-left" title="Regression Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, Philipp S. Sommer
+        &#169; Copyright 2020, Philipp S. Sommer.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
