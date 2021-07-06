@@ -26,7 +26,8 @@ commands:
           name: Install the conda environment
           command: |
             which conda || source $HOME/miniconda3/bin/activate base
-            conda env create -f .circleci/environment.yml -n docs
+            conda install mamba -n base -c conda-forge
+            mamba env create -f .circleci/environment.yml -n docs
       - run:
           name: Build the docs
           command: |
