@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Plot a fit over a density plot &mdash; psyplot-examples version e2bc277</title>
+  <title>Plot a fit over a density plot &mdash; psyplot-examples version 9ad2b0e</title>
   
 
   
@@ -104,6 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/example_sharing.html">Sharing formatoptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html">Applying your own post processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/example_post.html#Saving-and-loading">Saving and loading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/example_extending_psyplot.html">Extending psyplot</a></li>
 </ul>
 
             
@@ -443,10 +444,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/e2bc277/regression-analysis/example_densityreg.ipynb">regression-analysis/example_densityreg.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/9ad2b0e/regression-analysis/example_densityreg.ipynb">regression-analysis/example_densityreg.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/e2bc277?filepath=regression-analysis/example_densityreg.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/9ad2b0e?filepath=regression-analysis/example_densityreg.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -859,10 +860,10 @@ dl.xr-attrs {
 Dimensions:  (experiment: 1500)
 Dimensions without coordinates: experiment
 Data variables:
-    x        (experiment) float64 -5.204 -4.991 -4.779 ... 3.795 3.964 4.132
-    y        (experiment) float64 1.039 1.135 0.8968 ... -0.5161 -0.8129 -0.9519</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-1aeecaaf-d701-4ea3-a9c3-b4ecdd72da38' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-1aeecaaf-d701-4ea3-a9c3-b4ecdd72da38' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>experiment</span>: 1500</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-d433c2a5-fee4-43b6-9df8-e97bf0325cb7' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d433c2a5-fee4-43b6-9df8-e97bf0325cb7' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-d9fafdf1-b382-4470-b87b-04d1155b2c6a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d9fafdf1-b382-4470-b87b-04d1155b2c6a' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>x</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-5.204 -4.991 ... 3.964 4.132</div><input id='attrs-864661e8-895f-497d-940d-d83a147d8c02' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-864661e8-895f-497d-940d-d83a147d8c02' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dafd4f6f-f0a6-42c7-a66d-9478613996ba' class='xr-var-data-in' type='checkbox'><label for='data-dafd4f6f-f0a6-42c7-a66d-9478613996ba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-5.20378618, -4.99138675, -4.77898731, ...,  3.79503345,
-        3.9637016 ,  4.13236976])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>y</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.039 1.135 ... -0.8129 -0.9519</div><input id='attrs-5b09cc60-301a-4785-abe1-e5eb0fbc5b4c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-5b09cc60-301a-4785-abe1-e5eb0fbc5b4c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-870bc446-dddd-49f9-945a-c163942c58fe' class='xr-var-data-in' type='checkbox'><label for='data-870bc446-dddd-49f9-945a-c163942c58fe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 1.03918831,  1.13536773,  0.89680026, ..., -0.51605069,
-       -0.81293265, -0.95187431])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8241efca-7372-49bc-a6d6-025d5b8dd56f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8241efca-7372-49bc-a6d6-025d5b8dd56f' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div>
+    x        (experiment) float64 -3.922 -3.762 -3.602 ... 3.493 3.648 3.804
+    y        (experiment) float64 0.3594 0.122 0.6474 ... -0.3696 -0.6556</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-88ba295f-aef7-4600-829e-704c3e74d09d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-88ba295f-aef7-4600-829e-704c3e74d09d' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>experiment</span>: 1500</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-b3cb8f4e-a0f6-41d9-a5a5-12aa7a70ffbb' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b3cb8f4e-a0f6-41d9-a5a5-12aa7a70ffbb' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-3c0f893b-f2c0-480c-81f6-92ddeaa6a8a8' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3c0f893b-f2c0-480c-81f6-92ddeaa6a8a8' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>x</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-3.922 -3.762 ... 3.648 3.804</div><input id='attrs-83db9df2-d03a-4127-81ed-b3f3b82b8548' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-83db9df2-d03a-4127-81ed-b3f3b82b8548' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-554e4f2a-c4b1-4f07-a826-ba48150ee8dc' class='xr-var-data-in' type='checkbox'><label for='data-554e4f2a-c4b1-4f07-a826-ba48150ee8dc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-3.92206416, -3.7619799 , -3.60189565, ...,  3.49315946,
+        3.64841099,  3.80366252])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>y</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.3594 0.122 ... -0.3696 -0.6556</div><input id='attrs-9e80dcd1-6cc3-44d9-a181-6ff5b8309909' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9e80dcd1-6cc3-44d9-a181-6ff5b8309909' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5e603ae8-e3ab-4a93-9d5e-b3dd2676835e' class='xr-var-data-in' type='checkbox'><label for='data-5e603ae8-e3ab-4a93-9d5e-b3dd2676835e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 0.35940505,  0.12197518,  0.64735186, ..., -0.03977773,
+       -0.36959891, -0.65558183])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-20bf72f1-8094-4c46-8ccf-b3492ceb8a5a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-20bf72f1-8094-4c46-8ccf-b3492ceb8a5a' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div>
 </div>
 <p>This dataset now contains the two variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. A scatter plot of the data looks like</p>
 <div class="nbinput docutils container">
@@ -936,8 +937,8 @@ psyplot.project.Project([    arr1: 1-dim DataArray of y, with (experiment)=(1500
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/circleci/miniconda3/envs/docs/lib/python3.7/site-packages/psy_reg/utils.py:88: RuntimeWarning: Need finite parameter boundaries for automatic initial parameter estimation!
-  RuntimeWarning)
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_reg/utils.py:86: RuntimeWarning: Need finite parameter boundaries for automatic initial parameter estimation!
+  warn(&#34;Need finite parameter boundaries for automatic initial &#34;
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
