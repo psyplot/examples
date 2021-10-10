@@ -1,77 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Extending psyplot &mdash; psyplot-examples version 9ad2b0e</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>Extending psyplot &mdash; psyplot-examples version 2beaea1</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Applying your own post processing" href="example_post.html" />
     <link rel="prev" title="General Examples" href="README.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> psyplot-examples
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../regression-analysis/example_densityreg.html">Plot a fit over a density plot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../regression-analysis/example_basic_fit.html">Creating and accessing a fit</a></li>
@@ -129,71 +79,30 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">psyplot-examples</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Extending psyplot</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/general/example_extending_psyplot.ipynb.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS for nbsphinx extension */
@@ -466,10 +375,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/9ad2b0e/general/example_extending_psyplot.ipynb">general/example_extending_psyplot.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/2beaea1/general/example_extending_psyplot.ipynb">general/example_extending_psyplot.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/9ad2b0e?filepath=general/example_extending_psyplot.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/2beaea1?filepath=general/example_extending_psyplot.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -486,8 +395,8 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>This example requires the <a class="reference download internal" download="" href="../_downloads/7f633640bea5413a226f61fc95701c45/demo.nc"><code class="xref download docutils literal notranslate"><span class="pre">demo.nc</span></code></a> file.</p>
 </div>
-<div class="section" id="Extending-psyplot">
-<h1>Extending psyplot<a class="headerlink" href="#Extending-psyplot" title="Permalink to this headline">¶</a></h1>
+<section id="Extending-psyplot">
+<h1>Extending psyplot<a class="headerlink" href="#Extending-psyplot" title="Permalink to this headline"></a></h1>
 <p>This notebook demonstrates how psyplot can be extended with your own plotting scripts.</p>
 <p>There are three ways that we demonstrate:</p>
 <ol class="arabic simple">
@@ -515,7 +424,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-INFO:matplotlib.font_manager:Generating new fontManager, this may take some time...
+INFO:matplotlib.font_manager:generated new fontManager
 </pre></div></div>
 </div>
 <p>We will demonstrate the different strategies with the functionality to add country boarders to the plot via cartopy. In a standard setting, this can be achieved pretty easily via <code class="docutils literal notranslate"><span class="pre">ax.add_feature(cf.BORDERS)</span></code>:</p>
@@ -537,7 +446,7 @@ INFO:matplotlib.font_manager:Generating new fontManager, this may take some time
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f4767151dc0&gt;
+&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f7d17f46910&gt;
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -545,10 +454,10 @@ INFO:matplotlib.font_manager:Generating new fontManager, this may take some time
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naciscdn.org/naturalearth/50m/physical/ne_50m_coastline.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
-/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naciscdn.org/naturalearth/50m/cultural/ne_50m_admin_0_boundary_lines_land.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_physical/ne_50m_coastline.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/50m_cultural/ne_50m_admin_0_boundary_lines_land.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
 /home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/mpl/style.py:76: UserWarning: facecolor will have no effect as it has been defined as &#34;never&#34;.
   warnings.warn(&#39;facecolor will have no effect as it has been &#39;
 </pre></div></div>
@@ -584,8 +493,8 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naciscdn.org/naturalearth/110m/physical/ne_110m_coastline.zip
-  warnings.warn(&#39;Downloading: {}&#39;.format(url), DownloadWarning)
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/110m_physical/ne_110m_coastline.zip
+  warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -595,8 +504,8 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 <img alt="../_images/general_example_extending_psyplot_5_2.png" src="../_images/general_example_extending_psyplot_5_2.png" />
 </div>
 </div>
-<div class="section" id="1.-The-standard-matplotlib-approach">
-<h2>1. The standard matplotlib approach<a class="headerlink" href="#1.-The-standard-matplotlib-approach" title="Permalink to this headline">¶</a></h2>
+<section id="1.-The-standard-matplotlib-approach">
+<h2>1. The standard matplotlib approach<a class="headerlink" href="#1.-The-standard-matplotlib-approach" title="Permalink to this headline"></a></h2>
 <p>This the straight-forward approach that uses the fact that you can always access the matplotlib axes and run your own scripts. So we just combine the two steps from above:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -615,7 +524,7 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f475e804b80&gt;
+&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f7d0f5f9a60&gt;
 </pre></div></div>
 </div>
 <div class="nboutput docutils container">
@@ -634,17 +543,17 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 <img alt="../_images/general_example_extending_psyplot_7_2.png" src="../_images/general_example_extending_psyplot_7_2.png" />
 </div>
 </div>
-<div class="section" id="1.1-Advantages:">
-<h3>1.1 Advantages:<a class="headerlink" href="#1.1-Advantages:" title="Permalink to this headline">¶</a></h3>
+<section id="1.1-Advantages:">
+<h3>1.1 Advantages:<a class="headerlink" href="#1.1-Advantages:" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>straight-forward matplotlib</p></li>
 <li><p>You do not have to interact with the psyplot framework at all</p></li>
 </ul>
-</div>
-<div class="section" id="1.2-Disadvantages">
-<h3>1.2 Disadvantages<a class="headerlink" href="#1.2-Disadvantages" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="1.2.1.-It-does-not-benefit-from-the-interactive-psyplot-framework">
-<h4>1.2.1. It does not benefit from the interactive psyplot framework<a class="headerlink" href="#1.2.1.-It-does-not-benefit-from-the-interactive-psyplot-framework" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="1.2-Disadvantages">
+<h3>1.2 Disadvantages<a class="headerlink" href="#1.2-Disadvantages" title="Permalink to this headline"></a></h3>
+<section id="1.2.1.-It-does-not-benefit-from-the-interactive-psyplot-framework">
+<h4>1.2.1. It does not benefit from the interactive psyplot framework<a class="headerlink" href="#1.2.1.-It-does-not-benefit-from-the-interactive-psyplot-framework" title="Permalink to this headline"></a></h4>
 <p>If you change your projection for instance, psyplot has to redraw the plot. See the following example where we change the projection of the basemap <strong>after</strong> the borders have been drawn.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -666,15 +575,15 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 </div>
 </div>
 <p>Within the psyplot framework, we can encode when a feature in the plot needs to be drawn again. Changing the projection is a very expensive procedure. We first need to clear the axes and then regenerate the plot from scratch. As psyplot does not know anything about your <em>borders</em>, you have to rerun your script here.</p>
-</div>
-<div class="section" id="1.2.2.-It-results-in-copy-pasting">
-<h4>1.2.2. It results in copy-pasting<a class="headerlink" href="#1.2.2.-It-results-in-copy-pasting" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="1.2.2.-It-results-in-copy-pasting">
+<h4>1.2.2. It results in copy-pasting<a class="headerlink" href="#1.2.2.-It-results-in-copy-pasting" title="Permalink to this headline"></a></h4>
 <p>Adding country borders is a pretty simple task. But imagine you have a more challenging task for the visualization and you want to use this in many different scripts or even interactively via IPython. Then you need to copy-paste your code from one script to the other and this is not DRY (don’t repeat yourself) at all.</p>
-</div>
-</div>
-</div>
-<div class="section" id="2.-The-post-formatoption">
-<h2>2. The <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption<a class="headerlink" href="#2.-The-post-formatoption" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="2.-The-post-formatoption">
+<h2>2. The <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption<a class="headerlink" href="#2.-The-post-formatoption" title="Permalink to this headline"></a></h2>
 <p>Another way that would be more psyplot-like is to use the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption. You can find more about this <a class="reference external" href="https://psyplot.github.io/examples/general/example_post.html">here</a>.</p>
 <p>You have two formatoptions for every plotter:</p>
 <ol class="arabic simple">
@@ -712,8 +621,8 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 <img alt="../_images/general_example_extending_psyplot_14_1.png" src="../_images/general_example_extending_psyplot_14_1.png" />
 </div>
 </div>
-<div class="section" id="2.1-Advantages">
-<h3>2.1 Advantages<a class="headerlink" href="#2.1-Advantages" title="Permalink to this headline">¶</a></h3>
+<section id="2.1-Advantages">
+<h3>2.1 Advantages<a class="headerlink" href="#2.1-Advantages" title="Permalink to this headline"></a></h3>
 <p>This way, you can use your standard matplotlib script (<code class="docutils literal notranslate"><span class="pre">self.ax.add_feature(cf.BORDERS)</span></code>) and still benefit from the interactivity via the <code class="docutils literal notranslate"><span class="pre">post_timing</span></code> formatoption.</p>
 <p>Changing the projection, for instance, now also redraws the country borders</p>
 <div class="nbinput docutils container">
@@ -747,18 +656,18 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 <img alt="../_images/general_example_extending_psyplot_16_1.png" src="../_images/general_example_extending_psyplot_16_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="2.2-Disadvantages">
-<h3>2.2 Disadvantages<a class="headerlink" href="#2.2-Disadvantages" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="2.2-Disadvantages">
+<h3>2.2 Disadvantages<a class="headerlink" href="#2.2-Disadvantages" title="Permalink to this headline"></a></h3>
 <ol class="arabic simple">
 <li><p>It’s not very pythonic. The <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption takes python code and executes it via the built-in <code class="docutils literal notranslate"><span class="pre">exec</span></code> function. Using <code class="docutils literal notranslate"><span class="pre">exec</span></code> is always a security issue. This is why you have to explicitly allow the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption with the <code class="docutils literal notranslate"><span class="pre">enable_post</span></code> argument in the call above.</p></li>
 <li><p>You have to add your python code as string so you do not benefit from a lot of editor features, such as auto-completion, etc.</p></li>
 <li><p>It’s hard to change the style of the borders as you have to change the script that you pass to the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="3.-The-formatoption-approach">
-<h2>3. The formatoption approach<a class="headerlink" href="#3.-The-formatoption-approach" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="3.-The-formatoption-approach">
+<h2>3. The formatoption approach<a class="headerlink" href="#3.-The-formatoption-approach" title="Permalink to this headline"></a></h2>
 <p>The last approach here is the preferred method when you work with the psyplot framework. We generate our own formatoption and add it to the plotter. With this, we can make most out of the flexible and interactive framework, and we can easily reuse it across different scripts.</p>
 <p>Formatoptions are just subclasses of the <code class="docutils literal notranslate"><span class="pre">psyplot.plotter.Formatoption</span></code>. We used a formatoption already with the <code class="docutils literal notranslate"><span class="pre">post</span></code> approach from above (the <code class="docutils literal notranslate"><span class="pre">self</span></code> is a formatoption). Our formatoption looks like:</p>
 <div class="nbinput nblast docutils container">
@@ -874,8 +783,8 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 <img alt="../_images/general_example_extending_psyplot_27_1.png" src="../_images/general_example_extending_psyplot_27_1.png" />
 </div>
 </div>
-<div class="section" id="3.1-Advantages">
-<h3>3.1 Advantages<a class="headerlink" href="#3.1-Advantages" title="Permalink to this headline">¶</a></h3>
+<section id="3.1-Advantages">
+<h3>3.1 Advantages<a class="headerlink" href="#3.1-Advantages" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>Full compliance with the don’t repeat yourself principle</p></li>
 <li><p>Uses the full flexibility of the psyplot framework</p></li>
@@ -884,60 +793,43 @@ psyplot.project.Project([    arr0: 2-dim DataArray of t2m, with (lat, lon)=(96, 
 <li><p>You can enhance your formatoption. Here we only accept <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> as a value, but you could also easily make your formatoption accept a dictionary with color or linewidth to the formatoption, e.g.  <code class="docutils literal notranslate"><span class="pre">borders={&quot;color&quot;:</span> <span class="pre">&quot;red&quot;,</span> <span class="pre">&quot;linewidths&quot;:</span> <span class="pre">0.1})</span></code>.</p></li>
 <li><p>If you make sure that your formatoption is always compatible with the latest version of matplotlib, cartopy, etc. you automatically make sure that all of your plotting scripts are still compatible.</p></li>
 </ul>
-</div>
-<div class="section" id="3.2-Disadvantages">
-<h3>3.2 Disadvantages<a class="headerlink" href="#3.2-Disadvantages" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="3.2-Disadvantages">
+<h3>3.2 Disadvantages<a class="headerlink" href="#3.2-Disadvantages" title="Permalink to this headline"></a></h3>
 <p>You have to add a couple of lines of code.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="example_post.html" class="btn btn-neutral float-right" title="Applying your own post processing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="README.html" class="btn btn-neutral float-left" title="General Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="example_post.html" class="btn btn-neutral float-right" title="Applying your own post processing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, Philipp S. Sommer.
-
-    </p>
+    <p>&#169; Copyright 2020, Philipp S. Sommer.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

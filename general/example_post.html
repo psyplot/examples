@@ -1,77 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Applying your own post processing &mdash; psyplot-examples version 9ad2b0e</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>Applying your own post processing &mdash; psyplot-examples version 2beaea1</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sharing formatoptions" href="example_sharing.html" />
     <link rel="prev" title="Extending psyplot" href="example_extending_psyplot.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> psyplot-examples
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../regression-analysis/example_densityreg.html">Plot a fit over a density plot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../regression-analysis/example_basic_fit.html">Creating and accessing a fit</a></li>
@@ -112,71 +62,30 @@
 <li class="toctree-l1"><a class="reference internal" href="example_extending_psyplot.html">Extending psyplot</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">psyplot-examples</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Applying your own post processing</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/general/example_post.ipynb.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS for nbsphinx extension */
@@ -449,10 +358,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/9ad2b0e/general/example_post.ipynb">general/example_post.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/2beaea1/general/example_post.ipynb">general/example_post.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/9ad2b0e?filepath=general/example_post.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/2beaea1?filepath=general/example_post.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -469,8 +378,8 @@ div.rendered_html tbody tr:hover {
 <p class="admonition-title">Note</p>
 <p>This example requires the <a class="reference download internal" download="" href="../_downloads/7f633640bea5413a226f61fc95701c45/demo.nc"><code class="xref download docutils literal notranslate"><span class="pre">demo.nc</span></code></a> file.</p>
 </div>
-<div class="section" id="Applying-your-own-post-processing">
-<h1>Applying your own post processing<a class="headerlink" href="#Applying-your-own-post-processing" title="Permalink to this headline">¶</a></h1>
+<section id="Applying-your-own-post-processing">
+<h1>Applying your own post processing<a class="headerlink" href="#Applying-your-own-post-processing" title="Permalink to this headline"></a></h1>
 <p>This demo shows you how to use the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption to apply your own post processing scripts.</p>
 <p>It requires the <code class="docutils literal notranslate"><span class="pre">'demo.nc'</span></code> netCDF file, <code class="docutils literal notranslate"><span class="pre">netCDF4</span></code> and the <a class="reference external" href="http://psyplot.readthedocs.io/projects/psy-maps/en/latest/">psy-maps</a> plugin.</p>
 <div class="nbinput nblast docutils container">
@@ -484,8 +393,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="Usage">
-<h2>Usage<a class="headerlink" href="#Usage" title="Permalink to this headline">¶</a></h2>
+<section id="Usage">
+<h2>Usage<a class="headerlink" href="#Usage" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption let’s you apply your own script to modify your data. Let’s start with a simple plot of the wind speed:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -957,7 +866,7 @@ Attributes:
     units:        m/s
     code:         131
     table:        128
-    grid_type:    gaussian</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>variable</span>: 2</li><li><span class='xr-has-index'>lat</span>: 96</li><li><span class='xr-has-index'>lon</span>: 192</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-f4830aca-77aa-4c5c-8cd3-22ae342f98a0' class='xr-array-in' type='checkbox' checked><label for='section-f4830aca-77aa-4c5c-8cd3-22ae342f98a0' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>-5.549 -5.471 -5.385 -5.291 -5.189 ... -1.366 -1.498 -1.625 -1.747</span></div><div class='xr-array-data'><pre>array([[[-5.548854  , -5.470729  , -5.3847914 , ..., -5.7344007 ,
+    grid_type:    gaussian</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>variable</span>: 2</li><li><span class='xr-has-index'>lat</span>: 96</li><li><span class='xr-has-index'>lon</span>: 192</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-46d0534f-1813-4b43-8d31-0b01064faa5e' class='xr-array-in' type='checkbox' checked><label for='section-46d0534f-1813-4b43-8d31-0b01064faa5e' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>-5.549 -5.471 -5.385 -5.291 -5.189 ... -1.366 -1.498 -1.625 -1.747</span></div><div class='xr-array-data'><pre>array([[[-5.548854  , -5.470729  , -5.3847914 , ..., -5.7344007 ,
          -5.6802015 , -5.618678  ],
         [-4.1748304 , -4.246608  , -4.30276   , ..., -3.8872328 ,
          -3.9927015 , -4.0898695 ],
@@ -983,7 +892,7 @@ Attributes:
         [-2.2043629 , -2.2819996 , -2.3586597 , ..., -1.9577808 ,
          -2.04323   , -2.1252613 ],
         [-1.8645191 , -1.9768238 , -2.0837574 , ..., -1.4978199 ,
-         -1.624773  , -1.7468433 ]]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-963c18ca-c3c9-495d-a8cb-f288b3201b59' class='xr-section-summary-in' type='checkbox'  checked><label for='section-963c18ca-c3c9-495d-a8cb-f288b3201b59' class='xr-section-summary' >Coordinates: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 1.875 3.75 ... 356.2 358.1</div><input id='attrs-5b7ab386-b494-460c-9fa4-b54c3525a740' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5b7ab386-b494-460c-9fa4-b54c3525a740' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-98d6e64d-bbe7-4a29-b561-38cb2d296522' class='xr-var-data-in' type='checkbox'><label for='data-98d6e64d-bbe7-4a29-b561-38cb2d296522' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([  0.   ,   1.875,   3.75 ,   5.625,   7.5  ,   9.375,  11.25 ,  13.125,
+         -1.624773  , -1.7468433 ]]], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-78fbb64d-2d84-4b93-8ed6-8f7f72d96533' class='xr-section-summary-in' type='checkbox'  checked><label for='section-78fbb64d-2d84-4b93-8ed6-8f7f72d96533' class='xr-section-summary' >Coordinates: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 1.875 3.75 ... 356.2 358.1</div><input id='attrs-01fd9405-cb2a-45c4-a0ee-de396a1df180' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-01fd9405-cb2a-45c4-a0ee-de396a1df180' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6bd5449a-3edb-42cd-a3f6-dfa7fa76cba7' class='xr-var-data-in' type='checkbox'><label for='data-6bd5449a-3edb-42cd-a3f6-dfa7fa76cba7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([  0.   ,   1.875,   3.75 ,   5.625,   7.5  ,   9.375,  11.25 ,  13.125,
         15.   ,  16.875,  18.75 ,  20.625,  22.5  ,  24.375,  26.25 ,  28.125,
         30.   ,  31.875,  33.75 ,  35.625,  37.5  ,  39.375,  41.25 ,  43.125,
         45.   ,  46.875,  48.75 ,  50.625,  52.5  ,  54.375,  56.25 ,  58.125,
@@ -1006,7 +915,7 @@ Attributes:
        300.   , 301.875, 303.75 , 305.625, 307.5  , 309.375, 311.25 , 313.125,
        315.   , 316.875, 318.75 , 320.625, 322.5  , 324.375, 326.25 , 328.125,
        330.   , 331.875, 333.75 , 335.625, 337.5  , 339.375, 341.25 , 343.125,
-       345.   , 346.875, 348.75 , 350.625, 352.5  , 354.375, 356.25 , 358.125])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>88.57 86.72 84.86 ... -86.72 -88.57</div><input id='attrs-05761a8d-657c-4ee1-a127-6225ec7d1a1c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-05761a8d-657c-4ee1-a127-6225ec7d1a1c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5e11a502-b5de-46ee-b222-640477a84172' class='xr-var-data-in' type='checkbox'><label for='data-5e11a502-b5de-46ee-b222-640477a84172' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([ 88.572169,  86.722531,  84.86197 ,  82.998942,  81.134977,  79.270559,
+       345.   , 346.875, 348.75 , 350.625, 352.5  , 354.375, 356.25 , 358.125])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>88.57 86.72 84.86 ... -86.72 -88.57</div><input id='attrs-6ccb17e7-e707-430d-9b82-00e6bf281d27' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6ccb17e7-e707-430d-9b82-00e6bf281d27' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4cdf8aaa-8dd0-469f-95da-7b394fb7d051' class='xr-var-data-in' type='checkbox'><label for='data-4cdf8aaa-8dd0-469f-95da-7b394fb7d051' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([ 88.572169,  86.722531,  84.86197 ,  82.998942,  81.134977,  79.270559,
         77.405888,  75.541061,  73.676132,  71.811132,  69.946081,  68.080991,
         66.215872,  64.35073 ,  62.485571,  60.620396,  58.755209,  56.890013,
         55.024808,  53.159595,  51.294377,  49.429154,  47.563926,  45.698694,
@@ -1021,7 +930,7 @@ Attributes:
        -45.698694, -47.563926, -49.429154, -51.294377, -53.159595, -55.024808,
        -56.890013, -58.755209, -60.620396, -62.485571, -64.35073 , -66.215872,
        -68.080991, -69.946081, -71.811132, -73.676132, -75.541061, -77.405888,
-       -79.270559, -81.134977, -82.998942, -84.86197 , -86.722531, -88.572169])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lev</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+05</div><input id='attrs-1cce6ed7-0b27-4e14-bdff-9e96ea566e2b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1cce6ed7-0b27-4e14-bdff-9e96ea566e2b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1b3b788a-479a-4eb5-9942-ced327033bba' class='xr-var-data-in' type='checkbox'><label for='data-1b3b788a-479a-4eb5-9942-ced327033bba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>air_pressure</dd><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array(100000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1979-01-31T18:00:00</div><input id='attrs-ce5a1247-a1a7-49b9-8c1a-2b080a3e9f39' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ce5a1247-a1a7-49b9-8c1a-2b080a3e9f39' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-65fd704f-3105-4f92-af5f-457bcc90ff92' class='xr-var-data-in' type='checkbox'><label for='data-65fd704f-3105-4f92-af5f-457bcc90ff92' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;1979-01-31T18:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>variable</span></div><div class='xr-var-dims'>(variable)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;u&#x27; &#x27;v&#x27;</div><input id='attrs-8b94c4cb-2b64-47a6-9107-668543860fd3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8b94c4cb-2b64-47a6-9107-668543860fd3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f925955f-2c7e-4474-9ff9-2266ecb94333' class='xr-var-data-in' type='checkbox'><label for='data-f925955f-2c7e-4474-9ff9-2266ecb94333' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;u&#x27;, &#x27;v&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2b6d041d-06c5-4b9f-888b-b2e1118341bf' class='xr-section-summary-in' type='checkbox'  ><label for='section-2b6d041d-06c5-4b9f-888b-b2e1118341bf' class='xr-section-summary' >Attributes: <span>(10)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>CDI :</span></dt><dd>Climate Data Interface version 1.6.8 (http://mpimet.mpg.de/cdi)</dd><dt><span>Conventions :</span></dt><dd>CF-1.4</dd><dt><span>history :</span></dt><dd>Mon Aug 17 22:51:40 2015: cdo -r copy test-t2m-u-v.nc test-t2m-u-v_relativetime.nc</dd><dt><span>title :</span></dt><dd>Test file</dd><dt><span>CDO :</span></dt><dd>Climate Data Operators version 1.6.8rc2 (http://mpimet.mpg.de/cdo)</dd><dt><span>long_name :</span></dt><dd>zonal wind-velocity</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>code :</span></dt><dd>131</dd><dt><span>table :</span></dt><dd>128</dd><dt><span>grid_type :</span></dt><dd>gaussian</dd></dl></div></li></ul></div></div></div>
+       -79.270559, -81.134977, -82.998942, -84.86197 , -86.722531, -88.572169])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lev</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+05</div><input id='attrs-b94e1d74-2d52-4358-a906-8aeb756631c0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b94e1d74-2d52-4358-a906-8aeb756631c0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-95485c5c-27ef-4262-9b9b-04af12cf39eb' class='xr-var-data-in' type='checkbox'><label for='data-95485c5c-27ef-4262-9b9b-04af12cf39eb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>air_pressure</dd><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array(100000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1979-01-31T18:00:00</div><input id='attrs-52a24598-9f23-4148-9de3-c9ba7e7800d2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-52a24598-9f23-4148-9de3-c9ba7e7800d2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1a5adb06-0813-4558-ac2a-2b3f400d68ce' class='xr-var-data-in' type='checkbox'><label for='data-1a5adb06-0813-4558-ac2a-2b3f400d68ce' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;1979-01-31T18:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>variable</span></div><div class='xr-var-dims'>(variable)</div><div class='xr-var-dtype'>&lt;U1</div><div class='xr-var-preview xr-preview'>&#x27;u&#x27; &#x27;v&#x27;</div><input id='attrs-df878afc-6799-4153-ae06-891c5f930df6' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-df878afc-6799-4153-ae06-891c5f930df6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1ea77b7e-0080-4df4-88ad-9977eaa34c10' class='xr-var-data-in' type='checkbox'><label for='data-1ea77b7e-0080-4df4-88ad-9977eaa34c10' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;u&#x27;, &#x27;v&#x27;], dtype=&#x27;&lt;U1&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-41fd1599-8b8f-44f6-9f25-6f831897f301' class='xr-section-summary-in' type='checkbox'  ><label for='section-41fd1599-8b8f-44f6-9f25-6f831897f301' class='xr-section-summary' >Attributes: <span>(10)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>CDI :</span></dt><dd>Climate Data Interface version 1.6.8 (http://mpimet.mpg.de/cdi)</dd><dt><span>Conventions :</span></dt><dd>CF-1.4</dd><dt><span>history :</span></dt><dd>Mon Aug 17 22:51:40 2015: cdo -r copy test-t2m-u-v.nc test-t2m-u-v_relativetime.nc</dd><dt><span>title :</span></dt><dd>Test file</dd><dt><span>CDO :</span></dt><dd>Climate Data Operators version 1.6.8rc2 (http://mpimet.mpg.de/cdo)</dd><dt><span>long_name :</span></dt><dd>zonal wind-velocity</dd><dt><span>units :</span></dt><dd>m/s</dd><dt><span>code :</span></dt><dd>131</dd><dt><span>table :</span></dt><dd>128</dd><dt><span>grid_type :</span></dt><dd>gaussian</dd></dl></div></li></ul></div></div></div>
 </div>
 <p>It is a 3-dimensional array, where the first dimension consists of the zonal wind speed <code class="docutils literal notranslate"><span class="pre">'u'</span></code> and the meridional wind speed <code class="docutils literal notranslate"><span class="pre">'v'</span></code>. So let’s add their means as a text to the plot:</p>
 <div class="nbinput docutils container">
@@ -1050,9 +959,9 @@ Attributes:
 <img alt="../_images/general_example_post_10_0.png" src="../_images/general_example_post_10_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="Timing">
-<h2>Timing<a class="headerlink" href="#Timing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Timing">
+<h2>Timing<a class="headerlink" href="#Timing" title="Permalink to this headline"></a></h2>
 <p>psyplot is intended to work interactively. By default, the <code class="docutils literal notranslate"><span class="pre">post</span></code> formatoption is only updated when you personally update it. However, you can modify this timing using the <code class="docutils literal notranslate"><span class="pre">post_timing</span></code> formatoption. It can be either</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">'never'</span></code>: The default which requires a manual update</p></li>
@@ -1138,10 +1047,10 @@ psyplot.project.Project([    arr0: 3-dim DataArray of u, v, with (variable, lat,
 <img alt="../_images/general_example_post_17_0.png" src="../_images/general_example_post_17_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="Saving-and-loading">
-<h1>Saving and loading<a class="headerlink" href="#Saving-and-loading" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section id="Saving-and-loading">
+<h1>Saving and loading<a class="headerlink" href="#Saving-and-loading" title="Permalink to this headline"></a></h1>
 <p>Saving a project is straight forward via the <code class="docutils literal notranslate"><span class="pre">save_project</span></code> method</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -1163,22 +1072,12 @@ psyplot.project.Project([    arr0: 3-dim DataArray of u, v, with (variable, lat,
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psyplot/data.py:4040: UserWarning: Could not open array arr0 because no filename was specified!
-  warn(&#34;Could not open array %s because no filename was &#34;
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-&lt;Figure size 432x288 with 0 Axes&gt;
-</pre></div></div>
+<img alt="../_images/general_example_post_21_0.png" src="../_images/general_example_post_21_0.png" />
+</div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -1189,54 +1088,37 @@ psyplot.project.Project([    arr0: 3-dim DataArray of u, v, with (variable, lat,
 </pre></div>
 </div>
 </div>
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="example_sharing.html" class="btn btn-neutral float-right" title="Sharing formatoptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="example_extending_psyplot.html" class="btn btn-neutral float-left" title="Extending psyplot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="example_sharing.html" class="btn btn-neutral float-right" title="Sharing formatoptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, Philipp S. Sommer.
-
-    </p>
+    <p>&#169; Copyright 2020, Philipp S. Sommer.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,76 +1,37 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Plot a fit over a density plot &mdash; psyplot-examples version 9ad2b0e</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>Plot a fit over a density plot &mdash; psyplot-examples version 2beaea1</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Creating and accessing a fit" href="example_basic_fit.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> psyplot-examples
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -78,18 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Plot a fit over a density plot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example_basic_fit.html">Creating and accessing a fit</a></li>
@@ -107,71 +57,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/example_extending_psyplot.html">Extending psyplot</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">psyplot-examples</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>Plot a fit over a density plot</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../_sources/regression-analysis/example_densityreg.ipynb.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   
 <style>
 /* CSS for nbsphinx extension */
@@ -444,10 +353,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/9ad2b0e/regression-analysis/example_densityreg.ipynb">regression-analysis/example_densityreg.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/2beaea1/regression-analysis/example_densityreg.ipynb">regression-analysis/example_densityreg.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/9ad2b0e?filepath=regression-analysis/example_densityreg.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/2beaea1?filepath=regression-analysis/example_densityreg.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -463,8 +372,8 @@ div.rendered_html tbody tr:hover {
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
 </div>
-<div class="section" id="Plot-a-fit-over-a-density-plot">
-<h1>Plot a fit over a density plot<a class="headerlink" href="#Plot-a-fit-over-a-density-plot" title="Permalink to this headline">¶</a></h1>
+<section id="Plot-a-fit-over-a-density-plot">
+<h1>Plot a fit over a density plot<a class="headerlink" href="#Plot-a-fit-over-a-density-plot" title="Permalink to this headline"></a></h1>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">densityreg</span></code> plot method to combine fits and their raw data.</p>
 <p>This example uses artifical data to show you the capabilities of the <code class="docutils literal notranslate"><span class="pre">densityreg</span></code> plot method.</p>
 <div class="nbinput nblast docutils container">
@@ -860,10 +769,10 @@ dl.xr-attrs {
 Dimensions:  (experiment: 1500)
 Dimensions without coordinates: experiment
 Data variables:
-    x        (experiment) float64 -3.922 -3.762 -3.602 ... 3.493 3.648 3.804
-    y        (experiment) float64 0.3594 0.122 0.6474 ... -0.3696 -0.6556</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-88ba295f-aef7-4600-829e-704c3e74d09d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-88ba295f-aef7-4600-829e-704c3e74d09d' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>experiment</span>: 1500</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-b3cb8f4e-a0f6-41d9-a5a5-12aa7a70ffbb' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b3cb8f4e-a0f6-41d9-a5a5-12aa7a70ffbb' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-3c0f893b-f2c0-480c-81f6-92ddeaa6a8a8' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3c0f893b-f2c0-480c-81f6-92ddeaa6a8a8' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>x</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-3.922 -3.762 ... 3.648 3.804</div><input id='attrs-83db9df2-d03a-4127-81ed-b3f3b82b8548' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-83db9df2-d03a-4127-81ed-b3f3b82b8548' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-554e4f2a-c4b1-4f07-a826-ba48150ee8dc' class='xr-var-data-in' type='checkbox'><label for='data-554e4f2a-c4b1-4f07-a826-ba48150ee8dc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-3.92206416, -3.7619799 , -3.60189565, ...,  3.49315946,
-        3.64841099,  3.80366252])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>y</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.3594 0.122 ... -0.3696 -0.6556</div><input id='attrs-9e80dcd1-6cc3-44d9-a181-6ff5b8309909' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9e80dcd1-6cc3-44d9-a181-6ff5b8309909' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5e603ae8-e3ab-4a93-9d5e-b3dd2676835e' class='xr-var-data-in' type='checkbox'><label for='data-5e603ae8-e3ab-4a93-9d5e-b3dd2676835e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 0.35940505,  0.12197518,  0.64735186, ..., -0.03977773,
-       -0.36959891, -0.65558183])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-20bf72f1-8094-4c46-8ccf-b3492ceb8a5a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-20bf72f1-8094-4c46-8ccf-b3492ceb8a5a' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div>
+    x        (experiment) float64 -3.877 -3.719 -3.561 ... 2.967 3.099 3.231
+    y        (experiment) float64 0.971 0.3336 0.1374 ... 0.3315 0.2195 -0.5973</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-9d0aad07-9150-4c2e-8170-0cf8effc092f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-9d0aad07-9150-4c2e-8170-0cf8effc092f' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>experiment</span>: 1500</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-46b8103e-fc3e-4dc0-a0d8-f5a2d3db1437' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-46b8103e-fc3e-4dc0-a0d8-f5a2d3db1437' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-10bd3a2f-f153-405c-bd94-363f78745fe6' class='xr-section-summary-in' type='checkbox'  checked><label for='section-10bd3a2f-f153-405c-bd94-363f78745fe6' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>x</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-3.877 -3.719 ... 3.099 3.231</div><input id='attrs-3d4e0533-ebaa-4b54-bd36-d1e936bb9b53' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3d4e0533-ebaa-4b54-bd36-d1e936bb9b53' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e0d27495-8eb9-424e-a1d0-ae0fb223e44a' class='xr-var-data-in' type='checkbox'><label for='data-e0d27495-8eb9-424e-a1d0-ae0fb223e44a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-3.87710304, -3.71885394, -3.56060483, ...,  2.96695166,
+        3.09881618,  3.23068069])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>y</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.971 0.3336 ... 0.2195 -0.5973</div><input id='attrs-4dc04e88-9346-4b27-beee-34f5d3a7e0e8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4dc04e88-9346-4b27-beee-34f5d3a7e0e8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1ebce8a5-3ff3-454e-9d18-30fc22a73948' class='xr-var-data-in' type='checkbox'><label for='data-1ebce8a5-3ff3-454e-9d18-30fc22a73948' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 0.97101813,  0.33361557,  0.1373675 , ...,  0.33154912,
+        0.21945278, -0.5972634 ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b37e24fa-8acd-4f53-88bf-d4c907ebb9a2' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b37e24fa-8acd-4f53-88bf-d4c907ebb9a2' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div>
 </div>
 <p>This dataset now contains the two variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. A scatter plot of the data looks like</p>
 <div class="nbinput docutils container">
@@ -937,7 +846,7 @@ psyplot.project.Project([    arr1: 1-dim DataArray of y, with (experiment)=(1500
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_reg/utils.py:86: RuntimeWarning: Need finite parameter boundaries for automatic initial parameter estimation!
+/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_reg/utils.py:110: RuntimeWarning: Need finite parameter boundaries for automatic initial parameter estimation!
   warn(&#34;Need finite parameter boundaries for automatic initial &#34;
 </pre></div></div>
 </div>
@@ -966,53 +875,36 @@ psyplot.project.Project([    arr0: 1-dim DataArray of y, with (experiment)=(1500
 </pre></div>
 </div>
 </div>
-</div>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="example_basic_fit.html" class="btn btn-neutral float-left" title="Creating and accessing a fit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020, Philipp S. Sommer.
-
-    </p>
+    <p>&#169; Copyright 2020, Philipp S. Sommer.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
