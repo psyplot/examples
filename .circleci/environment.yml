@@ -12,5 +12,4 @@ dependencies:
 - ipython
 - ipykernel
 - seaborn
-- matplotlib<3.4
 - cartopy>=0.18

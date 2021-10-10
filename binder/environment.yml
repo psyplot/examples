@@ -10,7 +10,6 @@ dependencies:
 - pip
 - ncview
 - seaborn
-- matplotlib<3.4
 - cartopy>=0.18
 
 # Required for jupyter-desktop-server
