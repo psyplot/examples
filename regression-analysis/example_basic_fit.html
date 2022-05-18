@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creating and accessing a fit &mdash; psyplot-examples version 2beaea1</title>
+  <title>Creating and accessing a fit &mdash; psyplot-examples version aa5068e</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
@@ -17,8 +17,8 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -292,7 +292,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt a.copybtn {
+.prompt .copybtn {
     display: none;
 }
 
@@ -354,10 +354,10 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
   This page was generated from
-  <a class="reference external" href="https://github.com/psyplot/examples/blob/2beaea1/regression-analysis/example_basic_fit.ipynb">regression-analysis/example_basic_fit.ipynb</a>.
+  <a class="reference external" href="https://github.com/psyplot/examples/blob/aa5068e/regression-analysis/example_basic_fit.ipynb">regression-analysis/example_basic_fit.ipynb</a>.
   <br>
   Interactive online version:
-  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/2beaea1?filepath=regression-analysis/example_basic_fit.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
+  <span style="white-space: nowrap;"><a href="https://mybinder.org/v2/gh/psyplot/examples/aa5068e?filepath=regression-analysis/example_basic_fit.ipynb"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>.</span>
   <script>
     if (document.location.host) {
       $(document.currentScript).replaceWith(
@@ -380,8 +380,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">import</span> <span class="nn">psyplot.project</span> <span class="k">as</span> <span class="nn">psy</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
@@ -394,8 +393,7 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">+</span> <span class="mi">50</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="s1">&#39;experiment&#39;</span><span class="p">,</span> <span class="p">),</span> <span class="n">x</span><span class="p">),</span>
                  <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="s1">&#39;experiment&#39;</span><span class="p">,</span> <span class="p">),</span> <span class="n">y</span><span class="p">)})</span>
@@ -451,7 +449,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -764,7 +762,7 @@ Dimensions:  (experiment: 50)
 Dimensions without coordinates: experiment
 Data variables:
     x        (experiment) float64 0.0 2.041 4.082 6.122 ... 95.92 97.96 100.0
-    y        (experiment) float64 44.05 116.6 -21.61 13.46 ... 440.1 426.2 387.1</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-763c8504-ec22-4acf-b1b4-925e48f54229' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-763c8504-ec22-4acf-b1b4-925e48f54229' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>experiment</span>: 50</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-ec992f43-6487-42b9-a3cb-c81b3cddc9d4' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-ec992f43-6487-42b9-a3cb-c81b3cddc9d4' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-3d0b9874-b2c8-4de7-b9de-12b2fb48baa3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3d0b9874-b2c8-4de7-b9de-12b2fb48baa3' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>x</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.041 4.082 ... 97.96 100.0</div><input id='attrs-3da7f738-ed91-4fe0-b756-a5a24f485218' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3da7f738-ed91-4fe0-b756-a5a24f485218' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d7036ccb-e23f-4a72-a77b-418c9936ff26' class='xr-var-data-in' type='checkbox'><label for='data-d7036ccb-e23f-4a72-a77b-418c9936ff26' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  0.        ,   2.04081633,   4.08163265,   6.12244898,
+    y        (experiment) float64 61.33 -7.603 6.917 138.6 ... 442.7 406.0 457.9</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-28e534be-6a41-458a-8c50-25b846f4d580' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-28e534be-6a41-458a-8c50-25b846f4d580' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>experiment</span>: 50</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-551231bb-0bf3-4bc3-9328-005fb0240304' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-551231bb-0bf3-4bc3-9328-005fb0240304' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-e258a9dd-abcf-49a4-be14-7625ae448d1b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e258a9dd-abcf-49a4-be14-7625ae448d1b' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>x</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 2.041 4.082 ... 97.96 100.0</div><input id='attrs-6f944b29-db83-40e3-ab1b-35711a987d54' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-6f944b29-db83-40e3-ab1b-35711a987d54' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6819fe87-eb9c-4045-b0f4-8ad9741e6860' class='xr-var-data-in' type='checkbox'><label for='data-6819fe87-eb9c-4045-b0f4-8ad9741e6860' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  0.        ,   2.04081633,   4.08163265,   6.12244898,
          8.16326531,  10.20408163,  12.24489796,  14.28571429,
         16.32653061,  18.36734694,  20.40816327,  22.44897959,
         24.48979592,  26.53061224,  28.57142857,  30.6122449 ,
@@ -776,47 +774,36 @@ Data variables:
         73.46938776,  75.51020408,  77.55102041,  79.59183673,
         81.63265306,  83.67346939,  85.71428571,  87.75510204,
         89.79591837,  91.83673469,  93.87755102,  95.91836735,
-        97.95918367, 100.        ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>y</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>44.05 116.6 -21.61 ... 426.2 387.1</div><input id='attrs-c6540212-c23b-41d6-bb9a-ca4a517afaa8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c6540212-c23b-41d6-bb9a-ca4a517afaa8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d9f109a2-2e4d-409e-90db-2645d2f27b74' class='xr-var-data-in' type='checkbox'><label for='data-d9f109a2-2e4d-409e-90db-2645d2f27b74' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 44.04550479, 116.56248811, -21.61269111,  13.4587485 ,
-        69.33569991,  71.30977476,  -7.99118945,  48.42942887,
-       151.55811862, 114.02295066, 106.94437751, 151.48828259,
-       145.64572888, 160.42437664, 109.54314225, 124.41901054,
-       118.21753573, 187.81798401, 237.68851901, 133.15176387,
-       146.06388959, 122.60090342, 246.27696937, 181.06374563,
-       179.72465046, 207.59737072, 235.16505496, 326.0193982 ,
-       144.47782274, 311.17605945, 357.11058134, 344.83739607,
-       246.48482213, 316.53225253, 323.64556803, 338.36020075,
-       315.75609203, 419.22150218, 297.26244414, 365.07749183,
-       363.26810503, 395.88751323, 326.28427471, 411.67996932,
-       315.92428025, 371.68158336, 513.58271689, 440.05184977,
-       426.15782729, 387.05728648])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b01f37d5-b470-449c-ba01-4f3477b543b2' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b01f37d5-b470-449c-ba01-4f3477b543b2' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div>
+        97.95918367, 100.        ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>y</span></div><div class='xr-var-dims'>(experiment)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>61.33 -7.603 6.917 ... 406.0 457.9</div><input id='attrs-55d7fb9e-76c1-4729-b38f-4a155df1d629' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-55d7fb9e-76c1-4729-b38f-4a155df1d629' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-702d6940-d107-4489-9cee-1ffed7cf18af' class='xr-var-data-in' type='checkbox'><label for='data-702d6940-d107-4489-9cee-1ffed7cf18af' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 61.32820964,  -7.60305878,   6.91695584, 138.62505152,
+       150.52483642, 131.47109508, 100.34917085,  62.22119721,
+       121.80516427,   4.88436084,  65.8774143 , 104.42657724,
+       188.30856624, 150.24521751, 156.97265485, 159.56851785,
+       152.55922723, 181.21670665, 168.14140495, 198.37736406,
+       110.5054366 , 213.98163293, 198.34798427, 169.13431399,
+       181.29887159, 222.83015404, 194.77853387, 207.04457842,
+       230.18585704, 231.7400408 , 176.43903237, 200.31555069,
+       274.98431192, 411.02221771, 296.77271578, 251.15271357,
+       302.54754423, 299.66972013, 290.72928943, 379.07362254,
+       276.68617079, 349.12262727, 422.04345947, 407.18489527,
+       421.72591586, 402.64663155, 452.24769932, 442.74639168,
+       406.02165336, 457.9335129 ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3250e617-72b0-4de5-972b-b9f6cf138975' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-3250e617-72b0-4de5-972b-b9f6cf138975' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div>
 </div>
 <p>We can show this input data using the <code class="docutils literal notranslate"><span class="pre">lineplot</span></code> plot method from the psy-simple plugin:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span>
     <span class="n">ds</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">legendlabels</span><span class="o">=</span><span class="s1">&#39;raw data&#39;</span><span class="p">,</span>
     <span class="n">legend</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/home/circleci/miniconda3/envs/docs/lib/python3.8/site-packages/psy_simple/plugin.py:448: MatplotlibDeprecationWarning:
-The validate_legend_loc function was deprecated in Matplotlib 3.3 and will be removed two minor releases later.
-  return {&#39;loc&#39;: validate_legend_loc(value)}
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/regression-analysis_example_basic_fit_5_1.png" src="../_images/regression-analysis_example_basic_fit_5_1.png" />
+<img alt="../_images/regression-analysis_example_basic_fit_5_0.png" src="../_images/regression-analysis_example_basic_fit_5_0.png" />
 </div>
 </div>
 <p>The visualization of the fit is straight forward using the <code class="docutils literal notranslate"><span class="pre">linreg</span></code> plot method:</p>
@@ -824,8 +811,7 @@ The validate_legend_loc function was deprecated in Matplotlib 3.3 and will be re
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fit</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">linreg</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">raw</span><span class="o">.</span><span class="n">plotters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">linreg</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">raw</span><span class="o">.</span><span class="n">plotters</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
                       <span class="n">legendlabels</span><span class="o">=</span><span class="s1">&#39;fit&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">fit</span><span class="o">.</span><span class="n">share</span><span class="p">(</span><span class="n">raw</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">keys</span><span class="o">=</span><span class="s1">&#39;legend&#39;</span><span class="p">)</span>
 <span class="n">fit</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -844,8 +830,7 @@ The validate_legend_loc function was deprecated in Matplotlib 3.3 and will be re
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">data</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">plot_data</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">fit</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">psy</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">plot_data</span>
 <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -898,7 +883,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1207,94 +1192,94 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;y&#x27; (variable: 3, x: 100)&gt;
-array([[ 20.33062631,  24.54636686,  28.76210741,  32.97784796,
-         37.19358851,  41.40932906,  45.62506961,  49.84081016,
-         54.05655071,  58.27229126,  62.48803181,  66.70377236,
-         70.91951291,  75.13525346,  79.35099401,  83.56673456,
-         87.78247511,  91.99821566,  96.21395621, 100.42969676,
-        104.64543731, 108.86117786, 113.07691841, 117.29265896,
-        121.50839951, 125.72414006, 129.93988061, 134.15562116,
-        138.37136171, 142.58710226, 146.80284281, 151.01858336,
-        155.23432391, 159.45006446, 163.66580501, 167.88154556,
-        172.09728611, 176.31302666, 180.52876721, 184.74450776,
-        188.96024831, 193.17598886, 197.39172941, 201.60746996,
-        205.82321051, 210.03895106, 214.25469161, 218.47043216,
-        222.68617271, 226.90191326, 231.11765381, 235.33339436,
-        239.54913491, 243.76487546, 247.98061601, 252.19635656,
-        256.41209711, 260.62783766, 264.84357821, 269.05931876,
-        273.27505931, 277.49079986, 281.70654041, 285.92228096,
-        290.13802151, 294.35376206, 298.56950261, 302.78524316,
-        307.00098371, 311.21672426, 315.43246481, 319.64820536,
-        323.86394591, 328.07968646, 332.29542701, 336.51116756,
-        340.72690811, 344.94264866, 349.15838921, 353.37412976,
+array([[2.84468219e+01, 3.23881507e+01, 3.63294794e+01, 4.02708081e+01,
+        4.42121369e+01, 4.81534656e+01, 5.20947943e+01, 5.60361231e+01,
+        5.99774518e+01, 6.39187805e+01, 6.78601093e+01, 7.18014380e+01,
+        7.57427667e+01, 7.96840955e+01, 8.36254242e+01, 8.75667529e+01,
+        9.15080817e+01, 9.54494104e+01, 9.93907391e+01, 1.03332068e+02,
+        1.07273397e+02, 1.11214725e+02, 1.15156054e+02, 1.19097383e+02,
+        1.23038712e+02, 1.26980040e+02, 1.30921369e+02, 1.34862698e+02,
+        1.38804026e+02, 1.42745355e+02, 1.46686684e+02, 1.50628013e+02,
+        1.54569341e+02, 1.58510670e+02, 1.62451999e+02, 1.66393328e+02,
+        1.70334656e+02, 1.74275985e+02, 1.78217314e+02, 1.82158643e+02,
+        1.86099971e+02, 1.90041300e+02, 1.93982629e+02, 1.97923957e+02,
+        2.01865286e+02, 2.05806615e+02, 2.09747944e+02, 2.13689272e+02,
+        2.17630601e+02, 2.21571930e+02, 2.25513259e+02, 2.29454587e+02,
+        2.33395916e+02, 2.37337245e+02, 2.41278574e+02, 2.45219902e+02,
+        2.49161231e+02, 2.53102560e+02, 2.57043889e+02, 2.60985217e+02,
+        2.64926546e+02, 2.68867875e+02, 2.72809203e+02, 2.76750532e+02,
+        2.80691861e+02, 2.84633190e+02, 2.88574518e+02, 2.92515847e+02,
+        2.96457176e+02, 3.00398505e+02, 3.04339833e+02, 3.08281162e+02,
+        3.12222491e+02, 3.16163820e+02, 3.20105148e+02, 3.24046477e+02,
+        3.27987806e+02, 3.31929134e+02, 3.35870463e+02, 3.39811792e+02,
 ...
-        122.09919334, 126.22147158, 130.23730771, 134.08590618,
-        138.16439985, 142.23770413, 146.12624467, 150.31109547,
-        154.46126496, 158.39549057, 162.50865969, 166.62399046,
-        170.627687  , 174.71528709, 178.64756191, 182.66260632,
-        186.67560184, 190.6870244 , 194.70484168, 198.71319738,
-        202.79057064, 206.73826108, 210.82801178, 215.05891778,
-        219.53257236, 223.55129337, 227.67530913, 231.86431564,
-        235.95878344, 240.1201984 , 244.35758225, 248.65884628,
-        252.76802171, 257.05220813, 261.48543227, 265.86770348,
-        269.99202623, 274.47534266, 278.77730492, 283.04879554,
-        287.39758688, 291.92154715, 296.37518457, 300.91259445,
-        305.25594816, 309.77850104, 314.23847335, 318.56589388,
-        322.89448632, 327.41192627, 332.05730812, 336.67756074,
-        341.17811504, 345.65364795, 350.01512554, 354.3473276 ,
-        359.04584628, 363.48804419, 367.97587234, 372.68778826,
-        377.18903449, 381.69226453, 386.19937139, 390.70647826,
-        395.37752306, 400.30565245, 404.81301707, 409.03305763,
-        413.571862  , 418.20238594, 422.83290988, 427.36780876,
-        431.88166901, 436.74725241, 441.18507163, 445.850295  ,
-        450.66246152, 455.30627718, 459.95009284, 464.59390851]])
+        1.25324912e+02, 1.28903319e+02, 1.32668913e+02, 1.36404229e+02,
+        1.39988881e+02, 1.43645655e+02, 1.47293475e+02, 1.50808874e+02,
+        1.54553191e+02, 1.58425617e+02, 1.62189376e+02, 1.65790721e+02,
+        1.69615244e+02, 1.73351043e+02, 1.77072920e+02, 1.80835091e+02,
+        1.84798150e+02, 1.88753512e+02, 1.92464612e+02, 1.96255140e+02,
+        2.00196228e+02, 2.04303311e+02, 2.08195595e+02, 2.11918082e+02,
+        2.15556040e+02, 2.19369405e+02, 2.23100396e+02, 2.26814236e+02,
+        2.30575589e+02, 2.34316916e+02, 2.38065564e+02, 2.41759006e+02,
+        2.45630446e+02, 2.49801704e+02, 2.53749253e+02, 2.57799191e+02,
+        2.61946752e+02, 2.66134904e+02, 2.70318870e+02, 2.74404279e+02,
+        2.78297886e+02, 2.82153962e+02, 2.86196926e+02, 2.90150172e+02,
+        2.94102695e+02, 2.98053418e+02, 3.02004141e+02, 3.05954864e+02,
+        3.10265777e+02, 3.14645738e+02, 3.18939866e+02, 3.23194135e+02,
+        3.27389216e+02, 3.31671252e+02, 3.35827378e+02, 3.40135908e+02,
+        3.44478408e+02, 3.48838601e+02, 3.53061501e+02, 3.57368418e+02,
+        3.61676792e+02, 3.65986328e+02, 3.70295623e+02, 3.74687628e+02,
+        3.78996209e+02, 3.83253531e+02, 3.87529746e+02, 3.91836240e+02,
+        3.96024396e+02, 4.00453434e+02, 4.04843322e+02, 4.09072400e+02,
+        4.13380930e+02, 4.17689461e+02, 4.21996439e+02, 4.26137269e+02,
+        4.30539943e+02, 4.34745627e+02, 4.39089335e+02, 4.43420969e+02]])
 Coordinates:
   * x         (x) float64 0.0 1.01 2.02 3.03 4.04 ... 96.97 97.98 98.99 100.0
   * variable  (variable) &lt;U7 &#x27;y&#x27; &#x27;min_err&#x27; &#x27;max_err&#x27;
 Attributes:
-    slope:      4.173583144439824
-    intercept:  20.330626309836603
-    rsquared:   0.8642095929606968</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'y'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>variable</span>: 3</li><li><span class='xr-has-index'>x</span>: 100</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-713986e4-f12a-47e5-9e69-6c515ea29d80' class='xr-array-in' type='checkbox' checked><label for='section-713986e4-f12a-47e5-9e69-6c515ea29d80' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>20.33 24.55 28.76 32.98 37.19 41.41 ... 445.9 450.7 455.3 460.0 464.6</span></div><div class='xr-array-data'><pre>array([[ 20.33062631,  24.54636686,  28.76210741,  32.97784796,
-         37.19358851,  41.40932906,  45.62506961,  49.84081016,
-         54.05655071,  58.27229126,  62.48803181,  66.70377236,
-         70.91951291,  75.13525346,  79.35099401,  83.56673456,
-         87.78247511,  91.99821566,  96.21395621, 100.42969676,
-        104.64543731, 108.86117786, 113.07691841, 117.29265896,
-        121.50839951, 125.72414006, 129.93988061, 134.15562116,
-        138.37136171, 142.58710226, 146.80284281, 151.01858336,
-        155.23432391, 159.45006446, 163.66580501, 167.88154556,
-        172.09728611, 176.31302666, 180.52876721, 184.74450776,
-        188.96024831, 193.17598886, 197.39172941, 201.60746996,
-        205.82321051, 210.03895106, 214.25469161, 218.47043216,
-        222.68617271, 226.90191326, 231.11765381, 235.33339436,
-        239.54913491, 243.76487546, 247.98061601, 252.19635656,
-        256.41209711, 260.62783766, 264.84357821, 269.05931876,
-        273.27505931, 277.49079986, 281.70654041, 285.92228096,
-        290.13802151, 294.35376206, 298.56950261, 302.78524316,
-        307.00098371, 311.21672426, 315.43246481, 319.64820536,
-        323.86394591, 328.07968646, 332.29542701, 336.51116756,
-        340.72690811, 344.94264866, 349.15838921, 353.37412976,
+    slope:      3.9019154467129207
+    intercept:  28.446821926887775
+    rsquared:   0.8571328207787087</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'y'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>variable</span>: 3</li><li><span class='xr-has-index'>x</span>: 100</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-79825c12-9b28-422f-a571-86018912d41f' class='xr-array-in' type='checkbox' checked><label for='section-79825c12-9b28-422f-a571-86018912d41f' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>28.45 32.39 36.33 40.27 44.21 48.15 ... 426.1 430.5 434.7 439.1 443.4</span></div><div class='xr-array-data'><pre>array([[2.84468219e+01, 3.23881507e+01, 3.63294794e+01, 4.02708081e+01,
+        4.42121369e+01, 4.81534656e+01, 5.20947943e+01, 5.60361231e+01,
+        5.99774518e+01, 6.39187805e+01, 6.78601093e+01, 7.18014380e+01,
+        7.57427667e+01, 7.96840955e+01, 8.36254242e+01, 8.75667529e+01,
+        9.15080817e+01, 9.54494104e+01, 9.93907391e+01, 1.03332068e+02,
+        1.07273397e+02, 1.11214725e+02, 1.15156054e+02, 1.19097383e+02,
+        1.23038712e+02, 1.26980040e+02, 1.30921369e+02, 1.34862698e+02,
+        1.38804026e+02, 1.42745355e+02, 1.46686684e+02, 1.50628013e+02,
+        1.54569341e+02, 1.58510670e+02, 1.62451999e+02, 1.66393328e+02,
+        1.70334656e+02, 1.74275985e+02, 1.78217314e+02, 1.82158643e+02,
+        1.86099971e+02, 1.90041300e+02, 1.93982629e+02, 1.97923957e+02,
+        2.01865286e+02, 2.05806615e+02, 2.09747944e+02, 2.13689272e+02,
+        2.17630601e+02, 2.21571930e+02, 2.25513259e+02, 2.29454587e+02,
+        2.33395916e+02, 2.37337245e+02, 2.41278574e+02, 2.45219902e+02,
+        2.49161231e+02, 2.53102560e+02, 2.57043889e+02, 2.60985217e+02,
+        2.64926546e+02, 2.68867875e+02, 2.72809203e+02, 2.76750532e+02,
+        2.80691861e+02, 2.84633190e+02, 2.88574518e+02, 2.92515847e+02,
+        2.96457176e+02, 3.00398505e+02, 3.04339833e+02, 3.08281162e+02,
+        3.12222491e+02, 3.16163820e+02, 3.20105148e+02, 3.24046477e+02,
+        3.27987806e+02, 3.31929134e+02, 3.35870463e+02, 3.39811792e+02,
 ...
-        122.09919334, 126.22147158, 130.23730771, 134.08590618,
-        138.16439985, 142.23770413, 146.12624467, 150.31109547,
-        154.46126496, 158.39549057, 162.50865969, 166.62399046,
-        170.627687  , 174.71528709, 178.64756191, 182.66260632,
-        186.67560184, 190.6870244 , 194.70484168, 198.71319738,
-        202.79057064, 206.73826108, 210.82801178, 215.05891778,
-        219.53257236, 223.55129337, 227.67530913, 231.86431564,
-        235.95878344, 240.1201984 , 244.35758225, 248.65884628,
-        252.76802171, 257.05220813, 261.48543227, 265.86770348,
-        269.99202623, 274.47534266, 278.77730492, 283.04879554,
-        287.39758688, 291.92154715, 296.37518457, 300.91259445,
-        305.25594816, 309.77850104, 314.23847335, 318.56589388,
-        322.89448632, 327.41192627, 332.05730812, 336.67756074,
-        341.17811504, 345.65364795, 350.01512554, 354.3473276 ,
-        359.04584628, 363.48804419, 367.97587234, 372.68778826,
-        377.18903449, 381.69226453, 386.19937139, 390.70647826,
-        395.37752306, 400.30565245, 404.81301707, 409.03305763,
-        413.571862  , 418.20238594, 422.83290988, 427.36780876,
-        431.88166901, 436.74725241, 441.18507163, 445.850295  ,
-        450.66246152, 455.30627718, 459.95009284, 464.59390851]])</pre></div></div></li><li class='xr-section-item'><input id='section-c381eb9b-79c4-4725-8585-e158de00bdb4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c381eb9b-79c4-4725-8585-e158de00bdb4' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 1.01 2.02 ... 97.98 98.99 100.0</div><input id='attrs-fcc68090-2eff-4c93-a9c2-7c6779e783e5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-fcc68090-2eff-4c93-a9c2-7c6779e783e5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-62f72bc5-1ca4-4c80-b850-127ccb5f342b' class='xr-var-data-in' type='checkbox'><label for='data-62f72bc5-1ca4-4c80-b850-127ccb5f342b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  0.      ,   1.010101,   2.020202,   3.030303,   4.040404,   5.050505,
+        1.25324912e+02, 1.28903319e+02, 1.32668913e+02, 1.36404229e+02,
+        1.39988881e+02, 1.43645655e+02, 1.47293475e+02, 1.50808874e+02,
+        1.54553191e+02, 1.58425617e+02, 1.62189376e+02, 1.65790721e+02,
+        1.69615244e+02, 1.73351043e+02, 1.77072920e+02, 1.80835091e+02,
+        1.84798150e+02, 1.88753512e+02, 1.92464612e+02, 1.96255140e+02,
+        2.00196228e+02, 2.04303311e+02, 2.08195595e+02, 2.11918082e+02,
+        2.15556040e+02, 2.19369405e+02, 2.23100396e+02, 2.26814236e+02,
+        2.30575589e+02, 2.34316916e+02, 2.38065564e+02, 2.41759006e+02,
+        2.45630446e+02, 2.49801704e+02, 2.53749253e+02, 2.57799191e+02,
+        2.61946752e+02, 2.66134904e+02, 2.70318870e+02, 2.74404279e+02,
+        2.78297886e+02, 2.82153962e+02, 2.86196926e+02, 2.90150172e+02,
+        2.94102695e+02, 2.98053418e+02, 3.02004141e+02, 3.05954864e+02,
+        3.10265777e+02, 3.14645738e+02, 3.18939866e+02, 3.23194135e+02,
+        3.27389216e+02, 3.31671252e+02, 3.35827378e+02, 3.40135908e+02,
+        3.44478408e+02, 3.48838601e+02, 3.53061501e+02, 3.57368418e+02,
+        3.61676792e+02, 3.65986328e+02, 3.70295623e+02, 3.74687628e+02,
+        3.78996209e+02, 3.83253531e+02, 3.87529746e+02, 3.91836240e+02,
+        3.96024396e+02, 4.00453434e+02, 4.04843322e+02, 4.09072400e+02,
+        4.13380930e+02, 4.17689461e+02, 4.21996439e+02, 4.26137269e+02,
+        4.30539943e+02, 4.34745627e+02, 4.39089335e+02, 4.43420969e+02]])</pre></div></div></li><li class='xr-section-item'><input id='section-c46c354d-ca09-4197-94fa-fee9e3d66235' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c46c354d-ca09-4197-94fa-fee9e3d66235' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>0.0 1.01 2.02 ... 97.98 98.99 100.0</div><input id='attrs-23a1e213-a80c-4ba9-941b-5a1f17c57f42' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-23a1e213-a80c-4ba9-941b-5a1f17c57f42' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2833e276-a2b3-4ec8-ae0f-05fb851be3d9' class='xr-var-data-in' type='checkbox'><label for='data-2833e276-a2b3-4ec8-ae0f-05fb851be3d9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  0.      ,   1.010101,   2.020202,   3.030303,   4.040404,   5.050505,
          6.060606,   7.070707,   8.080808,   9.090909,  10.10101 ,  11.111111,
         12.121212,  13.131313,  14.141414,  15.151515,  16.161616,  17.171717,
         18.181818,  19.191919,  20.20202 ,  21.212121,  22.222222,  23.232323,
@@ -1310,15 +1295,14 @@ Attributes:
         78.787879,  79.79798 ,  80.808081,  81.818182,  82.828283,  83.838384,
         84.848485,  85.858586,  86.868687,  87.878788,  88.888889,  89.89899 ,
         90.909091,  91.919192,  92.929293,  93.939394,  94.949495,  95.959596,
-        96.969697,  97.979798,  98.989899, 100.      ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>variable</span></div><div class='xr-var-dims'>(variable)</div><div class='xr-var-dtype'>&lt;U7</div><div class='xr-var-preview xr-preview'>&#x27;y&#x27; &#x27;min_err&#x27; &#x27;max_err&#x27;</div><input id='attrs-954123c2-3504-4a34-8b66-ca4de59404e5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-954123c2-3504-4a34-8b66-ca4de59404e5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9b7f51ab-01ab-4259-9ca1-863197aba62e' class='xr-var-data-in' type='checkbox'><label for='data-9b7f51ab-01ab-4259-9ca1-863197aba62e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;y&#x27;, &#x27;min_err&#x27;, &#x27;max_err&#x27;], dtype=&#x27;&lt;U7&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a5428c39-5ea2-451b-8276-541e45a6cb55' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a5428c39-5ea2-451b-8276-541e45a6cb55' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>slope :</span></dt><dd>4.173583144439824</dd><dt><span>intercept :</span></dt><dd>20.330626309836603</dd><dt><span>rsquared :</span></dt><dd>0.8642095929606968</dd></dl></div></li></ul></div></div></div>
+        96.969697,  97.979798,  98.989899, 100.      ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>variable</span></div><div class='xr-var-dims'>(variable)</div><div class='xr-var-dtype'>&lt;U7</div><div class='xr-var-preview xr-preview'>&#x27;y&#x27; &#x27;min_err&#x27; &#x27;max_err&#x27;</div><input id='attrs-1a5ce026-5e35-4544-a718-71c5ba17f384' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1a5ce026-5e35-4544-a718-71c5ba17f384' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c7a8becb-75f0-4061-8478-296591e18f9d' class='xr-var-data-in' type='checkbox'><label for='data-c7a8becb-75f0-4061-8478-296591e18f9d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;y&#x27;, &#x27;min_err&#x27;, &#x27;max_err&#x27;], dtype=&#x27;&lt;U7&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-03f51891-6277-4059-8929-c7f340323099' class='xr-section-summary-in' type='checkbox'  checked><label for='section-03f51891-6277-4059-8929-c7f340323099' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>slope :</span></dt><dd>3.9019154467129207</dd><dt><span>intercept :</span></dt><dd>28.446821926887775</dd><dt><span>rsquared :</span></dt><dd>0.8571328207787087</dd></dl></div></li></ul></div></div></div>
 </div>
 <p>You see, that there are new attributes, <code class="docutils literal notranslate"><span class="pre">rsquared</span></code>, <code class="docutils literal notranslate"><span class="pre">intercept</span></code> and <code class="docutils literal notranslate"><span class="pre">slope</span></code>, the characteristics of the fit. As always with the dataset attributes in <code class="docutils literal notranslate"><span class="pre">psyplot</span></code>, you can visualize them, for example in the legend:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fit</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">legendlabels</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(yname)s</span><span class="s1"> = </span><span class="si">%(intercept).3g</span><span class="s1"> + </span><span class="si">%(slope).3g</span><span class="s1"> * </span><span class="si">%(xname)s</span><span class="s1">, R$^2$=</span><span class="si">%(rsquared).3g</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">legendlabels</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(yname)s</span><span class="s1"> = </span><span class="si">%(intercept).3g</span><span class="s1"> + </span><span class="si">%(slope).3g</span><span class="s1"> * </span><span class="si">%(xname)s</span><span class="s1">, R$^2$=</span><span class="si">%(rsquared).3g</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">fit</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1335,8 +1319,7 @@ Attributes:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fit</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
 <span class="n">fit</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1353,8 +1336,7 @@ Attributes:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fit</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="p">[(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">70</span><span class="p">)])</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">fix</span><span class="o">=</span><span class="p">[(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">70</span><span class="p">)])</span>
 <span class="n">fit</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1371,8 +1353,7 @@ Attributes:
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fit</span><span class="o">.</span><span class="n">summaries</span><span class="p">(</span><span class="s1">&#39;regression&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">summaries</span><span class="p">(</span><span class="s1">&#39;regression&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1405,8 +1386,7 @@ ideal
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psy</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
