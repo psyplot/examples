@@ -15,8 +15,8 @@ You can
 
 These examples are automatically tested and deployed using CircleCI |circleci|
 
-.. _psyplot GUI: psyplot.readthedocs.io/projects/psyplot-gui
-.. _psy-view: https://psyplot.readthedocs.io/projects/psy-view
+.. _psyplot GUI: https://psyplot.github.io/psyplot-gui/
+.. _psy-view: https://psyplot.github.io/psy-view/
 
 
 .. |notebooks| image:: https://mybinder.org/badge_logo.svg
