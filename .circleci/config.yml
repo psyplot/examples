@@ -41,7 +41,8 @@ commands:
 jobs:
   build_docs:
     working_directory: ~/repo
-    machine: true
+    machine:
+      image: ubuntu-2004:202111-02
     steps:
       - install_conda
       - build_docs
